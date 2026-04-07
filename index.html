@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Opportunities — Stock Pickers Academy</title>
+<title>SPA AI Roadmap — Altitude AI Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,33 +18,72 @@
   --r:12px;--rsm:8px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold)}
-.nav-tag{font-size:12px;color:var(--subtle)}
-.hero{padding:130px 2rem 70px;max-width:920px;margin:0 auto}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(34px,5.5vw,60px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:22px}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;padding-bottom:80px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-brand{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);white-space:nowrap}
+.nav-brand span{color:var(--gold)}
+.nav-cta{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:8px 18px;border-radius:999px;background:var(--gold);color:#000;text-decoration:none;white-space:nowrap;transition:opacity 0.2s;flex-shrink:0}
+.nav-cta:hover{opacity:0.88}
+
+/* HERO */
+.hero{padding:110px 2rem 0;max-width:960px;margin:0 auto}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+.hero-left{flex:1;min-width:280px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(30px,5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--gold)}
-.hero-sub{font-size:16px;color:var(--muted);max-width:540px;line-height:1.75;margin-bottom:16px}
-.hint{font-size:13px;color:var(--subtle)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:920px;margin:0 auto 56px;padding:0 2rem}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center}
-.stat-n{font-family:'Syne',sans-serif;font-size:30px;font-weight:700;line-height:1;margin-bottom:6px}
+.hero-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.75;margin-bottom:28px}
+.hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.meta-tag{font-size:12px;color:var(--subtle);padding:5px 12px;border:1px solid var(--border);border-radius:999px}
+
+/* TRUST BAR */
+.trust-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;max-width:960px;margin:0 auto 56px;display:flex;align-items:flex-start;gap:14px}
+.trust-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.trust-text{font-size:14px;color:var(--muted);line-height:1.7}
+.trust-text strong{color:var(--text);font-weight:500}
+
+/* START HERE SECTION */
+.start-wrap{max-width:960px;margin:0 auto 64px;padding:0 2rem}
+.section-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-eyebrow::before{content:'';width:16px;height:1px;background:var(--gold)}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:700;margin-bottom:8px;color:var(--text)}
+.section-sub{font-size:14px;color:var(--muted);margin-bottom:28px;max-width:560px;line-height:1.7}
+.start-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.start-card{background:var(--surface);border:2px solid var(--gold-border);border-radius:var(--r);padding:20px 22px;cursor:pointer;position:relative;overflow:hidden;transition:border-color 0.2s,background 0.2s,transform 0.15s}
+.start-card:hover{border-color:var(--gold);background:var(--surface2);transform:translateY(-2px)}
+.start-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.start-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+.start-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3}
+.start-why{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.start-result{font-size:12px;color:var(--green);font-weight:500;display:flex;align-items:center;gap:6px}
+.start-result::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
+.start-cta{font-size:11px;color:var(--gold);margin-top:12px;opacity:0.7;transition:opacity 0.2s}
+.start-card:hover .start-cta{opacity:1}
+
+/* DIVIDER */
+.page-divider{max-width:960px;margin:0 auto 56px;padding:0 2rem}
+.page-divider-line{height:1px;background:var(--border)}
+
+/* FULL AUDIT */
+.audit-wrap{max-width:960px;margin:0 auto;padding:0 2rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;line-height:1;margin-bottom:5px}
 .gold{color:var(--gold)}.green{color:var(--green)}.amber{color:var(--amber)}.purple{color:var(--purple)}
-.stat-l{font-size:11px;color:var(--subtle);text-transform:uppercase;letter-spacing:0.08em}
-.legend{max-width:920px;margin:0 auto 24px;padding:0 2rem;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.stat-l{font-size:11px;color:var(--subtle);text-transform:uppercase;letter-spacing:0.07em}
+.legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px}
 .legend-lbl{font-size:11px;color:var(--subtle);text-transform:uppercase;letter-spacing:0.1em}
 .legend-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
 .ldot{width:8px;height:8px;border-radius:50%}
 .lg{background:var(--green)}.la{background:var(--amber)}.lp{background:var(--purple)}
-.fwrap{max-width:920px;margin:0 auto 44px;padding:0 2rem}
-.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px}
 .fbtn{font-family:'DM Sans',sans-serif;font-size:13px;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.18s;white-space:nowrap}
 .fbtn:hover{border-color:var(--border2);color:var(--text)}
 .fbtn.on{background:var(--gold-dim);border-color:var(--gold-border);color:var(--gold)}
-.secs{max-width:920px;margin:0 auto;padding:0 2rem 100px}
+.secs{}
 .sec{margin-bottom:52px}
 .sec.hide{display:none}
 .sec-hdr{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
@@ -66,6 +105,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.9)
 .card-desc{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:12px}
 .card-cta{font-size:11px;color:var(--subtle);transition:color 0.2s}
 .card:hover .card-cta{color:var(--gold)}
+
+/* STICKY CTA BAR */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(20px);border-top:1px solid var(--border2);padding:14px 2rem;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sticky-text{font-size:14px;color:var(--muted)}
+.sticky-text strong{color:var(--text);font-weight:500}
+.sticky-btn{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:11px 24px;border-radius:999px;background:var(--gold);color:#000;text-decoration:none;white-space:nowrap;transition:opacity 0.2s;letter-spacing:0.03em}
+.sticky-btn:hover{opacity:0.88}
+
 /* MODAL */
 .overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
 .overlay.open{display:flex}
@@ -97,110 +144,192 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.9)
 .step-desc{font-size:13px;color:var(--muted);line-height:1.6}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-size:12px;padding:4px 12px;border-radius:999px;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
-footer{border-top:1px solid var(--border);padding:40px 2rem;text-align:center}
+.m-cta-wrap{padding:20px 26px 26px;border-top:1px solid var(--border);margin-top:4px;text-align:center}
+.m-cta-text{font-size:13px;color:var(--muted);margin-bottom:14px}
+.m-cta-btn{display:inline-block;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;padding:12px 28px;border-radius:999px;background:var(--gold);color:#000;text-decoration:none;letter-spacing:0.03em;transition:opacity 0.2s}
+.m-cta-btn:hover{opacity:0.88}
+
+footer{border-top:1px solid var(--border);padding:40px 2rem;text-align:center;margin-top:40px}
 .f-brand{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
 .f-note{font-size:12px;color:var(--subtle)}
+
 @media(max-width:768px){
-  nav{padding:0 1rem}.nav-tag{display:none}
-  .hero{padding:90px 1rem 48px}.hero-sub{font-size:15px}
-  .stats{padding:0 1rem;margin-bottom:36px}
-  .legend{padding:0 1rem}.fwrap{padding:0 1rem;margin-bottom:32px}
-  .fbtn{font-size:12px;padding:6px 12px}
-  .secs{padding:0 1rem 80px}.cards{grid-template-columns:1fr}
-  .overlay{padding:12px}.modal{max-height:92vh;border-radius:16px}
-  .m-hero{padding:20px 18px 16px}.m-body{padding:18px 18px 8px}
+  nav{padding:0 1rem}
+  .hero{padding:90px 1rem 0}
+  .hero-top{gap:24px;margin-bottom:32px}
+  .trust-bar{margin:0 1rem 40px;padding:16px}
+  .start-wrap{padding:0 1rem}
+  .page-divider{padding:0 1rem}
+  .audit-wrap{padding:0 1rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+  .overlay{padding:12px}
+  .modal{max-height:92vh;border-radius:16px}
+  .m-hero{padding:20px 18px 16px}
+  .m-body{padding:18px 18px 8px}
   .m-close{top:14px;right:14px}
+  .sticky-bar{padding:12px 1rem;gap:10px}
+  .sticky-text{font-size:13px}
+  .sticky-btn{font-size:12px;padding:10px 18px}
   footer{padding:32px 1rem}
 }
-@media(max-width:480px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){
+  .hero h1{font-size:28px}
+  .start-cards{grid-template-columns:1fr}
+  .sticky-text .hide-mobile{display:none}
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <span class="nav-brand">Stock Pickers Academy</span>
-  <span class="nav-tag">AI Opportunity Audit &mdash; Altitude AI Consulting</span>
+  <span class="nav-brand">Altitude <span>AI</span> Consulting</span>
+  <a class="nav-cta" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call</a>
 </nav>
+
 <div class="hero">
-  <div class="eyebrow">Prepared by Altitude AI Consulting</div>
-  <h1>Every area AI can<br><em>transform SPA</em></h1>
-  <p class="hero-sub">A full audit of where AI can change the game for SPA &mdash; from things you can do right now to the long-term vision.</p>
-  <p class="hint">Tap any card to explore in detail</p>
+  <div class="hero-top">
+    <div class="hero-left">
+      <div class="eyebrow">Stock Pickers Academy &mdash; AI Roadmap</div>
+      <h1>Here is the plan.<br>Here is <em>where we start.</em></h1>
+      <p class="hero-sub">Based on our conversation and a full audit of how SPA operates, Altitude AI has mapped every opportunity where AI can transform the business. Below is where we recommend starting and the full picture of what is possible.</p>
+      <div class="hero-meta">
+        <span class="meta-tag">Prepared by Bolaji Olatoye</span>
+        <span class="meta-tag">April 2026</span>
+        <span class="meta-tag">Confidential</span>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="stats">
-  <div class="stat"><div class="stat-n gold" id="sT">0</div><div class="stat-l">Opportunities</div></div>
-  <div class="stat"><div class="stat-n green" id="sN">0</div><div class="stat-l">Build now</div></div>
-  <div class="stat"><div class="stat-n amber" id="sS">0</div><div class="stat-l">Next phase</div></div>
-  <div class="stat"><div class="stat-n purple" id="sV">0</div><div class="stat-l">Long-term vision</div></div>
+
+<div style="max-width:960px;margin:32px auto 0;padding:0 2rem">
+  <div class="trust-bar">
+    <div class="trust-icon">&#128161;</div>
+    <div class="trust-text"><strong>About Altitude AI Consulting.</strong> We work with community founders and educators to identify, build, and deploy AI systems that save time, grow revenue, and create better member experiences. We have been inside SPA as a member, we understand how the community operates, and every recommendation on this page is specific to your business &mdash; not a generic template.</div>
+  </div>
 </div>
-<div class="legend">
-  <span class="legend-lbl">Key</span>
-  <span class="legend-item"><span class="ldot lg"></span>Build now</span>
-  <span class="legend-item"><span class="ldot la"></span>Next phase</span>
-  <span class="legend-item"><span class="ldot lp"></span>Vision</span>
+
+<!-- START HERE -->
+<div class="start-wrap" style="margin-top:8px">
+  <div class="section-eyebrow">Our recommendation</div>
+  <div class="section-title">Start here. These three things first.</div>
+  <div class="section-sub">With everything that is possible, the most important question is where to begin. These are the three things Altitude AI recommends building first for SPA. They are quick to implement, immediately visible to your members, and together they create the foundation everything else builds on.</div>
+  <div class="start-cards" id="start-cards"></div>
 </div>
-<div class="fwrap"><div class="filters" id="filters"></div></div>
-<div class="secs" id="secs"></div>
+
+<div class="page-divider" style="margin-top:64px">
+  <div style="display:flex;align-items:center;gap:16px">
+    <div class="page-divider-line" style="flex:1"></div>
+    <span style="font-size:11px;color:var(--subtle);text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap">Full opportunity audit</span>
+    <div class="page-divider-line" style="flex:1"></div>
+  </div>
+  <p style="font-size:14px;color:var(--muted);margin-top:16px;max-width:540px">Every area where AI can help SPA &mdash; across community, content, sales, trading tools, coaching, operations, technology, and brand. Tap any card to explore in detail.</p>
+</div>
+
+<div class="audit-wrap">
+  <div class="stats">
+    <div class="stat"><div class="stat-n gold" id="sT">0</div><div class="stat-l">Opportunities</div></div>
+    <div class="stat"><div class="stat-n green" id="sN">0</div><div class="stat-l">Build now</div></div>
+    <div class="stat"><div class="stat-n amber" id="sS">0</div><div class="stat-l">Next phase</div></div>
+    <div class="stat"><div class="stat-n purple" id="sV">0</div><div class="stat-l">Long-term vision</div></div>
+  </div>
+  <div class="legend">
+    <span class="legend-lbl">Key</span>
+    <span class="legend-item"><span class="ldot lg"></span>Build now</span>
+    <span class="legend-item"><span class="ldot la"></span>Next phase (3&ndash;6 months)</span>
+    <span class="legend-item"><span class="ldot lp"></span>Vision (6&ndash;18 months)</span>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="secs" id="secs"></div>
+</div>
+
 <footer>
-  <div class="f-brand">Altitude AI Consulting &times; Stock Pickers Academy</div>
-  <div class="f-note">Prepared April 2026 &mdash; Confidential</div>
+  <div class="f-brand">Altitude AI Consulting</div>
+  <div class="f-note">hello@altitudeai.co &nbsp;&middot;&nbsp; altitudeai.co &nbsp;&middot;&nbsp; Prepared April 2026</div>
 </footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div class="sticky-text"><strong>Ready to get started?</strong> <span class="hide-mobile">Book a call with Bolaji and we will agree the first steps.</span></div>
+  <a class="sticky-btn" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call &rarr;</a>
+</div>
+
+<!-- MODAL -->
 <div class="overlay" id="overlay">
   <div class="modal" id="modal">
     <div id="modal-content"></div>
   </div>
 </div>
+
 <script>
+var STARTS=[
+  {
+    num:"Start 01",
+    name:"Your AI coach, live in WhatsApp",
+    why:"This is the one thing that immediately changes the member experience. Every member gets a version of you available 24 hours a day, answering questions in your voice, based on everything you know about the Spartan strategy. Members stop waiting for you. You stop repeating yourself. And the community feels more alive and responsive overnight.",
+    result:"Members get instant answers. You get your time back.",
+    secId:"coaching", itemName:"Your personal AI coach"
+  },
+  {
+    num:"Start 02",
+    name:"Automate everything around joining",
+    why:"Right now there are several manual steps between someone paying and becoming a fully active member. Instant WhatsApp access on payment, a personal welcome message, and a 7-day guided journey through the community. These three automations, built together, eliminate your biggest source of early churn and make SPA feel like a premium product from the very first second.",
+    result:"New members activate faster and stay longer.",
+    secId:"community", itemName:"Instant access on payment"
+  },
+  {
+    num:"Start 03",
+    name:"Turn your Telegram group into a revenue stream",
+    why:"You have 4000 warm contacts in a Telegram group you are currently doing nothing with. An AI agent posting daily watch list highlights and guiding interested members toward the paid group requires almost no effort from you and could generate significant new revenue within weeks. This is the fastest possible return on any investment you make with us.",
+    result:"New paying members from an audience you already own.",
+    secId:"community", itemName:"Telegram revival"
+  }
+];
+
 var D=[
-{id:"community",label:"Community management",icon:"<br>",bg:"#1a2030",items:[
+{id:"community",label:"Community management",icon:"&#128172;",bg:"#1a2030",items:[
 {name:"AI welcome bot",t:"now",desc:"Every new member gets an instant, personal welcome the moment they join.",
 detail:"Right now when someone joins your WhatsApp group, they either get silence or a message from you if you happen to notice. An AI welcome bot changes that instantly. It detects when a new member joins, fires a warm welcome in your voice, sends them what to do first, links them to the watch list, and sets expectations for the community. It feels like you wrote it personally.",
 why:"Members who feel welcomed in the first few minutes are far more likely to stick around. This alone can dramatically reduce the number of people who join, go quiet, and quietly cancel in the first month.",
 tools:["WhatsApp automation","Your existing community platform"],
 steps:[["Write your welcome message","Draft what you would say to every new member if you had the time."],["Set it to fire automatically","The message goes out within seconds of someone joining."],["Add the key links","Watch list, how the group works, what to do on day one."],["Test it yourself","Join as a test member and experience it from their side."]],
 impact:[["Revenue impact",30],["Time saved",85],["Member experience",70]]},
-
 {name:"24/7 member Q and A",t:"now",desc:"A version of you that answers the same questions over and over so you never have to.",
 detail:"Every day members ask the same questions. What does the Spartan strategy mean? Should I be buying right now? When is the next alert? An AI version of you, trained on everything you have ever said or recorded, can answer these instantly at any time of day. Members get an immediate, knowledgeable response. You only get involved when something genuinely needs your personal input.",
 why:"You cannot be available 24 hours a day but your members expect it. This closes that gap without burning you out.",
 tools:["AI assistant trained on your content","Connected to WhatsApp"],
 steps:[["Gather everything you have created","Podcasts, course material, group messages, strategy documents."],["Give it your personality","Train it to speak like you, same tone, same directness."],["Define what it handles and what it passes to you","Personal financial advice comes to you. Everything else it handles."],["Watch the first few weeks","Review its answers regularly to make sure it represents you correctly."]],
 impact:[["Revenue impact",50],["Time saved",90],["Member experience",85]]},
-
 {name:"Instant access on payment",t:"now",desc:"The second someone pays they are in the group. No waiting, no manual approval from you.",
 detail:"Right now when someone pays to join SPA they have to wait for you to manually approve their WhatsApp request. Sometimes that happens quickly, sometimes it takes hours. In that gap a new member is wondering if something went wrong. This automation connects your payment system to your WhatsApp group so the moment money changes hands, access is granted. Instant. Automatic. No involvement from you.",
 why:"The gap between paying and getting access is the most vulnerable moment in a new member journey. Closing it to zero signals a professional, well-run operation.",
 tools:["Payment platform connection","WhatsApp group management"],
 steps:[["Connect your payment system","Link WOP payments so a trigger fires the moment someone subscribes."],["Automate the group approval","That trigger automatically approves their WhatsApp join request."],["Fire the welcome message","Combine with the welcome bot so they get a greeting simultaneously."],["Test the full flow","Go through the payment yourself and time how long it takes."]],
 impact:[["Revenue impact",20],["Time saved",95],["Member experience",80]]},
-
 {name:"Re-engagement nudges",t:"now",desc:"When a member goes quiet, AI checks in on them before they slip away.",
 detail:"The members most likely to cancel next month are not the ones complaining, they are the ones who have gone silent. An automated system spots this early, usually within 10 to 14 days of someone going quiet, and sends a personal-feeling message from you. Not a generic email but something that acknowledges what they missed and gives them a reason to come back.",
 why:"Saving a member who is about to leave costs almost nothing compared to finding a new one. Catching the drift early before they have made the decision to cancel is the highest-leverage retention move available.",
 tools:["Engagement monitoring","Automated messaging"],
 steps:[["Decide what quiet looks like","Is it 7 days without reading messages? 14 days without any interaction?"],["Build the check-in message","Use their name, reference their tier, make it feel like you noticed specifically."],["Set the trigger","The message fires automatically when the threshold is reached."],["Track what works","Monitor how many people re-engage and refine over time."]],
 impact:[["Revenue impact",70],["Time saved",60],["Member experience",65]]},
-
 {name:"Automatic offboarding",t:"now",desc:"When someone cancels, everything is handled cleanly and automatically including one last attempt to keep them.",
-detail:"When a member cancels right now you have to remember to remove them from WhatsApp, revoke their course access, and update your records. Miss any step and you either have someone in the group who is not paying or you lose track of your actual subscriber numbers. An automatic offboarding system handles all of it the moment a cancellation happens, and before it does, it sends one final message offering them a reason to stay.",
+detail:"When a member cancels right now you have to remember to remove them from WhatsApp, revoke their course access, and update your records. An automatic offboarding system handles all of it the moment a cancellation happens, and before it does, it sends one final message offering them a reason to stay.",
 why:"Tidy offboarding keeps your community clean and your numbers accurate. The automatic save attempt before someone leaves recovers a meaningful percentage of cancellations that were impulsive.",
 tools:["Payment platform integration","WhatsApp management","Course platform connection"],
-steps:[["Map what needs to happen on cancellation","List every place access needs to be removed."],["Automate each removal","One cancellation event triggers all removals simultaneously."],["Add a save message","Before access is removed, offer a pause or alternative. Keep it simple."],["Log everything","Record who left and when. This data helps you understand churn."]],
+steps:[["Map what needs to happen on cancellation","List every place access needs to be removed."],["Automate each removal","One cancellation event triggers all removals simultaneously."],["Add a save message","Before access is removed, offer a pause or alternative."],["Log everything","Record who left and when."]],
 impact:[["Revenue impact",55],["Time saved",80],["Member experience",60]]},
-
 {name:"Upgrade nudges",t:"soon",desc:"AI spots your most engaged members and suggests the right moment to offer them the Spartan tier.",
-detail:"Your most engaged members are your best candidates for upgrading to the 300 pound Spartan tier. But identifying them manually and finding the right moment is hit and miss. An AI system quietly watches engagement levels across your whole membership, spots the people who are most ready, and sends a personal message from you at exactly the right time.",
+detail:"Your most engaged members are your best candidates for upgrading to the 300 pound Spartan tier. An AI system quietly watches engagement levels across your whole membership, spots the people who are most ready, and sends a personal message from you at exactly the right time.",
 why:"An upgrade from an existing member costs you nothing in acquisition. Finding the right people at the right moment makes the conversion feel natural rather than salesy.",
 tools:["Engagement tracking","Automated messaging"],
-steps:[["Define what a ready-to-upgrade member looks like","High message activity, completing content, posting wins, been a member over 60 days."],["Score your membership weekly","AI tracks these signals and identifies the top candidates."],["Write the upgrade message","Reference their specific activity and explain what the next tier unlocks."],["Measure what converts","Track which signals best predict an upgrade and refine the targeting."]],
+steps:[["Define what a ready-to-upgrade member looks like","High message activity, completing content, posting wins."],["Score your membership weekly","AI tracks these signals and identifies the top candidates."],["Write the upgrade message","Reference their specific activity and explain what the next tier unlocks."],["Measure what converts","Track which signals best predict an upgrade."]],
 impact:[["Revenue impact",85],["Time saved",40],["Member experience",70]]},
-
 {name:"Group mood monitoring",t:"soon",desc:"AI reads the mood of the group and alerts you when panic or negativity is building before it spreads.",
 detail:"When the market has a bad day, fear spreads fast in a trading community. An AI mood monitor reads your group messages continuously and alerts you the moment it detects a shift. You get a heads-up with a summary of what is happening so you can step in with a calm, authoritative message at exactly the right moment.",
-why:"How you handle a bad market day is one of the most powerful demonstrations of your value. Members who see you respond calmly and intelligently to volatility become more loyal, not less.",
+why:"How you handle a bad market day is one of the most powerful demonstrations of your value. Members who see you respond calmly to volatility become more loyal, not less.",
 tools:["Message sentiment analysis","Alert notifications"],
-steps:[["Set up continuous group monitoring","The system reads messages and assesses the overall emotional tone."],["Define your alert triggers","What level of negativity warrants a message from you?"],["Get clear actionable alerts","A summary of what is happening and who is driving it."],["Prepare your response playbook","Pre-written calm responses for common scenarios ready to send quickly."]],
+steps:[["Set up continuous group monitoring","The system reads messages and assesses the overall emotional tone."],["Define your alert triggers","What level of negativity warrants a message from you?"],["Get clear actionable alerts","A summary of what is happening and who is driving it."],["Prepare your response playbook","Pre-written calm responses for common scenarios."]],
 impact:[["Revenue impact",60],["Time saved",50],["Member experience",80]]},
-
 {name:"Telegram revival",t:"now",desc:"Your 4000-person Telegram group is sitting idle. AI can turn it into a lead generation machine.",
 detail:"You have 4000 people who already know who you are sitting in a Telegram group you never post in. An AI agent can post daily watch list highlights, share your best content, run polls, and funnel interested members toward the paid WhatsApp group. You do not need to be involved at all.",
 why:"Even converting 1 percent of those 4000 people to paying members at 99 pounds a month is nearly 4000 pounds in new monthly revenue from something you are currently doing nothing with.",
@@ -208,372 +337,321 @@ tools:["Telegram bot","Content scheduling","Automated messages"],
 steps:[["Set up an AI agent in the group","It posts on your behalf, watch list highlights, repurposed content."],["Define the posting schedule","Daily or three times a week is enough to keep it alive."],["Add a conversion message","Anyone who engages gets a message about the paid group."],["Monitor and adjust","Track how many people click through and convert."]],
 impact:[["Revenue impact",75],["Time saved",70],["Member experience",65]]}
 ]},
-
-{id:"content",label:"Content creation",icon:"<br>",bg:"#201a10",items:[
+{id:"content",label:"Content creation",icon:"&#127916;",bg:"#201a10",items:[
 {name:"AI avatar",t:"now",desc:"A digital version of you that creates videos all day without you ever sitting in front of a camera.",
-detail:"You have already said you do not want to be on camera. But video content is how new people discover you and decide to join. AI avatar technology solves this completely. You record yourself speaking once, maybe 30 minutes of natural conversation, and from that a digital version of you is created. That avatar can then deliver any script you write, looking and sounding like you, without you being in the room.",
+detail:"You have already said you do not want to be on camera. But video content is how new people discover you and decide to join. AI avatar technology solves this. You record yourself speaking once and from that a digital version of you is created. That avatar delivers any script you write, looking and sounding like you, without you being in the room.",
 why:"Content is your lead generation engine. Removing the camera from the equation means nothing stops you posting every single day.",
 tools:["AI avatar creation","Voice cloning","Video scheduling"],
-steps:[["Record your training footage","One session of natural speaking. No script needed."],["Build your avatar","The AI creates a digital version of you."],["Clone your voice","A separate voice model is created so the audio matches."],["Create content from scripts","Write the scripts, feed them to the avatar, get finished videos back."],["Schedule and post","Videos go out automatically across your platforms."]],
+steps:[["Record your training footage","One session of natural speaking. No script needed."],["Build your avatar","The AI creates a digital version of you."],["Clone your voice","A voice model is created so the audio matches."],["Create content from scripts","Write the scripts, feed them to the avatar, get finished videos back."],["Schedule and post","Videos go out automatically across your platforms."]],
 impact:[["Revenue impact",80],["Time saved",90],["Member experience",60]]},
-
 {name:"Podcast clip machine",t:"now",desc:"Every podcast you do automatically becomes weeks of social content with no extra work.",
-detail:"You did 12 podcasts last year and you are already thinking about how to repurpose them. An automated pipeline takes every podcast recording, finds the best 30 and 60 second moments in it, cuts them into vertical clips for TikTok and Instagram, writes captions for each one, and schedules them to post over the following weeks. One hour-long podcast becomes 20 to 30 pieces of content.",
+detail:"An automated pipeline takes every podcast recording, finds the best 30 and 60 second moments, cuts them into vertical clips for TikTok and Instagram, writes captions for each one, and schedules them to post over the following weeks. One hour-long podcast becomes 20 to 30 pieces of content.",
 why:"You are already doing the hard work. This just makes sure that work reaches the maximum number of people instead of being heard once and forgotten.",
 tools:["Automatic clip finder","Caption writer","Social media scheduler"],
 steps:[["Upload each podcast after it airs","Drop the recording into the pipeline."],["AI finds the best moments","It identifies the clips most likely to perform well on social."],["Captions and titles are generated","Each clip gets a caption and hook written for the specific platform."],["Posts go out on a schedule","Content from one podcast drip-feeds out over the following weeks."]],
 impact:[["Revenue impact",75],["Time saved",85],["Member experience",55]]},
-
 {name:"Daily market commentary",t:"now",desc:"AI drafts your daily market update in your voice every morning. You just review it and post.",
-detail:"You know the watch list better than anyone. But writing a clear, engaging daily commentary takes time you do not always have. An AI system trained on how you talk about markets and the Spartan strategy drafts your commentary every morning before you are at your desk. It pulls in what happened overnight, what is relevant to your specific stocks, and writes it in your tone. You read it, make any adjustments, and post. The whole thing takes five minutes instead of forty.",
+detail:"An AI system trained on how you talk about markets and the Spartan strategy drafts your commentary every morning before you are at your desk. It pulls in what happened overnight, what is relevant to your specific stocks, and writes it in your tone. You read it, make any adjustments, and post. The whole thing takes five minutes instead of forty.",
 why:"Daily commentary is what separates a premium paid community from a free one. Members who get a consistent daily update feel like they are getting their money worth.",
 tools:["AI writing trained on your style","Live market data feed"],
 steps:[["Feed it your past commentary","Everything you have written teaches it your style."],["Connect it to market data","It pulls overnight price movements and news each morning."],["Get the draft at 7am","It lands in your inbox ready for review."],["Review and post","Five minutes to read, tweak anything, then share with the group."]],
 impact:[["Revenue impact",60],["Time saved",80],["Member experience",75]]},
-
 {name:"Weekly newsletter",t:"now",desc:"A polished weekly newsletter assembled by AI, reviewed by you, sent to your list every week.",
-detail:"A weekly newsletter to your wider audience keeps you top of mind and converts warm leads into paying members. AI pulls together the highlights from the past seven days, key watch list movements, best moments from the group, a tip or insight from you, and assembles them into a clean branded email. You review it and it goes out.",
+detail:"AI pulls together the highlights from the past seven days, key watch list movements, best moments from the group, a tip or insight from you, and assembles them into a clean branded email. You review it and it goes out.",
 why:"Email is the only audience you truly own. Social media can change its algorithm tomorrow. Your email list is yours forever.",
 tools:["Email platform","AI content assembly"],
 steps:[["Choose your email platform","If you do not have one set up, this is the moment."],["Define the newsletter sections","Market update, watch list highlight, member win, tip of the week."],["AI assembles the draft weekly","Every Friday it pulls content from the week."],["Review and send Sunday","Ten minutes to read through, then your subscribers get it."]],
 impact:[["Revenue impact",65],["Time saved",75],["Member experience",65]]},
-
 {name:"Content recycling",t:"soon",desc:"AI brings your best old content back to life for the half of your audience who have never seen it.",
-detail:"About half your current followers were not following you a year ago. Your best content from earlier years is completely new to them. An AI recycling system identifies your best performing old content, refreshes it where needed, and schedules it back out alongside your new content.",
-why:"You have invested years creating content. Without recycling, most of it gets seen once and never again. This multiplies the return on every piece of content you have ever made.",
+detail:"About half your current followers were not following you a year ago. Your best content from earlier years is completely new to them. An AI recycling system identifies your best performing old content and schedules it back out alongside your new content.",
+why:"You have invested years creating content. Without recycling, most of it gets seen once and never again.",
 tools:["Content library management","Social media scheduler"],
 steps:[["Audit your archive","Identify the content that performed best and is still relevant."],["Tag it for reuse","Label each piece by topic and format."],["Mix it into your content calendar","Roughly one third new, two thirds recycled."],["Watch the numbers","Recycled content often outperforms new content."]],
 impact:[["Revenue impact",55],["Time saved",70],["Member experience",50]]},
-
 {name:"Short video scripts",t:"now",desc:"AI writes punchy 30 and 60 second video scripts for your avatar to deliver every day.",
-detail:"Short video on TikTok and Instagram Reels is the fastest way to reach people who have never heard of you. AI trained on what works in the financial content space writes these scripts for you, batched a week at a time. You review them, feed them to your avatar, and a full week of videos is ready to go.",
+detail:"AI trained on what works in the financial content space writes scripts for you, batched a week at a time. You review them, feed them to your avatar, and a full week of videos is ready to go.",
 why:"Every short video that gets traction brings in cold leads who do not know you yet. Systematising this means you are always posting without ever sitting down to write.",
 tools:["AI script writer","Avatar video creation"],
 steps:[["Decide your content themes","What are the 5 or 6 topics you come back to again and again?"],["Generate a week of scripts every Monday","AI produces 7 scripts in one go."],["Review in 20 minutes","Read through, tweak anything that does not sound like you."],["Feed to your avatar and schedule","Videos are generated and queued automatically."]],
 impact:[["Revenue impact",70],["Time saved",80],["Member experience",55]]},
-
 {name:"Content analytics",t:"soon",desc:"AI tells you exactly which content brings in paying members so you can do more of what works.",
-detail:"Right now you probably have a sense of what content performs well based on likes and comments. But likes are not what pay the bills, sign-ups are. An analytics layer connects the dots between your social content and actual new member sign-ups, telling you which specific videos, posts, and podcasts drove people to join.",
+detail:"An analytics layer connects the dots between your social content and actual new member sign-ups, telling you which specific videos, posts, and podcasts drove people to join.",
 why:"Creating content without knowing what drives sign-ups is guesswork. This turns your content strategy into something you can measure and improve.",
 tools:["Analytics tracking","Conversion measurement","Dashboard"],
 steps:[["Set up tracking links","Every piece of content gets a unique link to trace sign-ups."],["Connect your sign-up data","Link social analytics to your subscription platform."],["See what is working","This video brought in 14 members. That one brought in zero."],["Get weekly recommendations","AI tells you what to create more of based on what converts."]],
 impact:[["Revenue impact",75],["Time saved",50],["Member experience",55]]},
-
 {name:"Member wins feed",t:"now",desc:"AI automatically collects your members profit posts and turns them into social proof content.",
-detail:"When a member posts a profit screenshot in your WhatsApp group, that is gold. Real people, real results, real money made using your strategy. That content converts cold followers into paying members faster than anything else you could post. AI monitors your group for wins, asks for permission, formats them into branded posts, and queues them to go out on your social channels.",
+detail:"When a member posts a profit screenshot in your WhatsApp group, that is gold. AI monitors your group for wins, asks for permission, formats them into branded posts, and queues them to go out on your social channels.",
 why:"Social proof is the most credible thing you can share because it is not you talking about yourself. Automating this means your most powerful marketing asset is always working.",
 tools:["Group monitoring","Permission requests","Post design","Scheduling"],
 steps:[["Set up win detection","AI scans the group for profit posts and success messages."],["Ask permission automatically","A quick message asks if they are happy for their win to be shared."],["Design the post","Approved wins are formatted into a branded template."],["Schedule and post","Goes out across your social channels automatically."]],
 impact:[["Revenue impact",80],["Time saved",75],["Member experience",70]]}
 ]},
-
-{id:"sales",label:"Sales and lead generation",icon:"<br>",bg:"#0f1e16",items:[
+{id:"sales",label:"Sales and lead generation",icon:"&#128200;",bg:"#0f1e16",items:[
 {name:"Social media follow-up",t:"now",desc:"Everyone who engages with your content gets an intelligent follow-up that moves them toward joining.",
-detail:"When someone comments on your TikTok, replies to your Instagram story, or sends you a DM, they are raising their hand. They are interested. But right now most of those people never hear from you again. An AI system monitors all your social accounts, detects every engagement signal, and sends a personalised follow-up that starts a real conversation and naturally guides them toward the paid group.",
+detail:"When someone comments on your TikTok, replies to your Instagram story, or sends you a DM, they are raising their hand. An AI system monitors all your social accounts, detects every engagement signal, and sends a personalised follow-up that starts a real conversation and naturally guides them toward the paid group.",
 why:"The gap between someone being interested and actually joining is usually just one conversation. You cannot have that conversation with everyone manually. AI can.",
 tools:["Social media messaging automation","AI conversation management"],
 steps:[["Connect your social accounts","Set up monitoring across Instagram, TikTok, and anywhere your audience engages."],["Define the follow-up flow","What questions do you ask to understand where someone is at?"],["Set the offer","Based on their answers, direct them to the right membership tier."],["You step in when it counts","Anyone who says they are ready to join comes straight to you."]],
 impact:[["Revenue impact",85],["Time saved",70],["Member experience",65]]},
-
 {name:"Lead prioritisation",t:"soon",desc:"AI ranks everyone who has shown interest so you always know who is most ready to join.",
-detail:"Not everyone who follows you is equally close to joining. Someone who has watched three of your videos, followed your account, and sent you a DM is very different from someone who liked a post once. A lead prioritisation system tracks all these signals and gives every person in your orbit a score so your follow-up energy is always focused in the right place.",
+detail:"A lead prioritisation system tracks engagement signals across all your platforms and gives every person in your orbit a score so your follow-up energy is always focused in the right place.",
 why:"You and your team have limited time for outreach. This makes sure that time is never spent on cold leads when someone almost ready to join has been sitting unnoticed.",
 tools:["Engagement tracking across platforms","Scoring and prioritisation dashboard"],
 steps:[["Define what warm looks like","Which actions suggest someone is close to joining?"],["Set up the tracking","AI monitors across your platforms and builds a running score for each person."],["Get a weekly priority list","Every Monday, a list of your top prospects."],["Reach out personally to the top ones","The highest-scored people get a personal message from you."]],
 impact:[["Revenue impact",70],["Time saved",55],["Member experience",55]]},
-
 {name:"Automated sales presentation",t:"soon",desc:"A recorded presentation that walks people through the Spartan strategy and converts them to members 24 hours a day.",
-detail:"Imagine a version of you that explains exactly what SPA is, shows the results your members have achieved, walks through the Spartan strategy in plain English, and invites people to join. Running on its own, every hour of every day, without you in the room. Someone sees your content, they register, they watch it at their convenience, and they join.",
+detail:"Imagine a version of you that explains exactly what SPA is, shows the results your members have achieved, walks through the Spartan strategy in plain English, and invites people to join. Running on its own, every hour of every day, without you in the room.",
 why:"You are the best salesperson for SPA. This captures that conversation once and lets it run indefinitely, converting warm leads while you sleep.",
 tools:["Automated presentation platform","Email follow-up sequence"],
 steps:[["Record the presentation","60 to 90 minutes of you at your best, your story, the strategy, member results, and the offer."],["Set it up to run on demand","Anyone who registers can watch it immediately."],["Build the follow-up","Automated emails go out before and after with the join link."],["Drive people to it","All your social content points here as the next step."]],
 impact:[["Revenue impact",85],["Time saved",65],["Member experience",70]]},
-
 {name:"Member referral programme",t:"now",desc:"AI runs a system that rewards your existing members for bringing in new ones.",
-detail:"Your existing members are your most credible salespeople. They have used the Spartan strategy, they have seen results, and they know people just like themselves. A referral programme gives them a simple way to share SPA with their network and rewards them when someone they refer actually joins. AI tracks every referral, confirms when a referred member pays, and sends the reward automatically.",
+detail:"Your existing members are your most credible salespeople. A referral programme gives them a simple way to share SPA with their network and rewards them when someone they refer actually joins. AI tracks every referral and sends the reward automatically.",
 why:"People who join because a friend recommended it convert better, stick around longer, and churn less. Referral is your highest quality source of new members.",
 tools:["Referral tracking system","Automated reward delivery"],
 steps:[["Decide on the reward","What do you give members for a successful referral? A free month? An upgrade?"],["Give everyone a personal referral link","Every member gets their own link so referrals are tracked automatically."],["Tell your members about it","Post in the group explaining the programme."],["Rewards happen automatically","When a referred member pays, the referring member gets their reward."]],
 impact:[["Revenue impact",80],["Time saved",65],["Member experience",70]]},
-
 {name:"Abandoned sign-up recovery",t:"now",desc:"When someone starts to join but does not finish, AI follows up and brings them back.",
-detail:"A surprising number of people start your sign-up process, get to the payment page, and then stop. These people are your warmest possible leads, they were ready to pay. An automated follow-up sequence reaches out within 30 minutes, then again the next day, with a friendly message that addresses common reasons people hesitate and makes it easy to complete their sign-up.",
+detail:"A surprising number of people start your sign-up process, get to the payment page, and then stop. These people are your warmest possible leads. An automated follow-up sequence reaches out within 30 minutes, then again the next day, with a friendly message that makes it easy to complete their sign-up.",
 why:"Recovery rates on abandoned sign-ups can be 15 to 25 percent. These are people who were already sold. That is significant revenue sitting uncollected.",
 tools:["Sign-up tracking","Automated follow-up messaging"],
 steps:[["Detect when someone drops off","A trigger fires when someone starts but does not complete sign-up within 30 minutes."],["Send the first follow-up","A simple warm message asking if something got in the way."],["Follow up again the next day","Address common hesitations honestly with evidence."],["One final message on day three","After that, they go into your longer-term nurture list."]],
 impact:[["Revenue impact",75],["Time saved",80],["Member experience",65]]},
-
 {name:"High-earner outreach",t:"soon",desc:"AI identifies the kind of people who belong in your Spartan tier and starts conversations with them on your behalf.",
-detail:"Your 300 pound a month Spartan tier is for a specific type of person, a professional or entrepreneur with real income who wants serious financial guidance. AI can identify them from their professional profiles and social activity and reach out with a personalised, thoughtful message that feels like it came from you personally. You only get involved when they respond.",
-why:"Filling the Spartan tier is your highest-value activity. One hundred Spartans at 300 pounds a month is 30,000 pounds in monthly recurring revenue from one tier.",
+detail:"Your 300 pound a month Spartan tier is for a specific type of person. AI can identify them from their professional profiles and social activity and reach out with a personalised message that feels like it came from you personally. You only get involved when they respond.",
+why:"Filling the Spartan tier is your highest-value activity. One hundred Spartans at 300 pounds a month is 30000 pounds in monthly recurring revenue from one tier.",
 tools:["Professional network search","Personalised outreach automation"],
-steps:[["Define who a Spartan member is","Job type, income signals, what they talk about online."],["Build a list of matches","AI finds people who fit that profile across LinkedIn and other platforms."],["Craft the outreach message","Personal, specific to them, genuinely valuable."],["Manage responses","Everyone who replies comes to you."]],
+steps:[["Define who a Spartan member is","Job type, income signals, what they talk about online."],["Build a list of matches","AI finds people who fit that profile."],["Craft the outreach message","Personal, specific to them, genuinely valuable."],["Manage responses","Everyone who replies comes to you."]],
 impact:[["Revenue impact",90],["Time saved",55],["Member experience",65]]},
-
 {name:"Objection handling",t:"now",desc:"When someone is almost ready to join but hesitates, AI responds with exactly the right thing at any hour.",
-detail:"Most people do not join the first time they express interest. They say they will think about it, or they ask whether it is really worth the money. An AI system trained on your best responses to every objection can have that conversation instantly, at 11pm on a Sunday, in a way that is empathetic and specific to what they have said.",
+detail:"Most people do not join the first time they express interest. An AI system trained on your best responses to every objection can have that conversation instantly, at 11pm on a Sunday, in a way that is empathetic and specific to what they have said.",
 why:"Sales are most often lost in the silence after someone expresses interest. Filling that silence with the right response at the right moment is the difference between a conversion and a lost member.",
 tools:["AI conversation management","Social and messaging platform integration"],
 steps:[["Write out your best answers to every hesitation","What do people worry about? Price, time commitment, experience level?"],["Train the AI on your evidence","Member results, testimonials, strategy track record."],["Connect it to your channels","Anyone who expresses hesitation in a DM gets the AI response within minutes."],["Monitor and refine","Review conversations regularly to see which responses are working."]],
 impact:[["Revenue impact",75],["Time saved",70],["Member experience",65]]},
-
 {name:"Social proof engine",t:"now",desc:"AI collects your members wins and automatically posts them as proof that the Spartan strategy works.",
-detail:"The single most persuasive thing you can show a potential member is someone just like them making real money using your strategy. An AI system monitors your community for these moments, gets permission to share them, formats them into posts, and publishes them across your channels on a regular schedule. Your social feeds become a constant stream of real evidence that SPA delivers results.",
-why:"People do not join because of what you say about yourself. They join because of what other members say about their experience. Automating this makes your most powerful marketing asset work without any effort.",
+detail:"An AI system monitors your community for member wins, gets permission to share them, formats them into posts, and publishes them across your channels on a regular schedule. Your social feeds become a constant stream of real evidence that SPA delivers results.",
+why:"People do not join because of what you say about yourself. They join because of what other members say about their experience.",
 tools:["Group monitoring","Post design automation","Social scheduling"],
 steps:[["Monitor the group for wins","AI watches for profit posts, percentage gains, and success messages."],["Ask permission","A quick automatic message confirms they are happy for their win to be shared."],["Design and format","Approved wins are turned into clean branded posts automatically."],["Post on a regular schedule","Goes out across your channels as a consistent stream of proof."]],
 impact:[["Revenue impact",80],["Time saved",75],["Member experience",70]]}
 ]},
-
-{id:"watchlist",label:"Watch list and trading tools",icon:"<br>",bg:"#1a1020",items:[
+{id:"watchlist",label:"Watch list and trading tools",icon:"&#128202;",bg:"#1a1020",items:[
 {name:"Live watch list dashboard",t:"soon",desc:"A real-time watch list that updates itself, replacing the Google Sheet with something members are proud to use.",
-detail:"Right now your watch list lives in a Google Sheet. It works but it does not feel premium, it requires manual updates, and it gives members no context beyond the numbers. A proper live dashboard pulls in real-time prices and relevant news for every stock on your list automatically throughout the trading day. Members open it on their phone and see a clean, professional interface that feels like something they are paying for.",
+detail:"A proper live dashboard pulls in real-time prices and relevant news for every stock on your list automatically throughout the trading day. Members open it on their phone and see a clean, professional interface that feels like something they are paying for.",
 why:"The watch list is the core reason people pay you. Upgrading it from a spreadsheet to a live dashboard is the single most visible improvement you can make to member experience.",
 tools:["Live market data","Custom web dashboard","Mobile-friendly design"],
 steps:[["Define what the perfect watch list looks like","What does a member need to see at a glance?"],["Connect a live data feed","Real-time prices and basic chart data for every stock."],["Build the interface","Clean, mobile-first, branded to SPA."],["Add push alerts","When a signal fires, members get a notification straight to their phone."],["Give members the link","One URL they can bookmark, their daily check-in point."]],
 impact:[["Revenue impact",85],["Time saved",80],["Member experience",90]]},
-
 {name:"Plain English trade explanations",t:"soon",desc:"Every buy and sell alert comes with a clear explanation of why in your words so members understand the move.",
-detail:"When a buy alert fires, members have two reactions. Either they act on it, or they freeze because they do not understand the reasoning and do not want to message you to ask. An AI system trained on how you think about your trades automatically writes a brief, plain English explanation every time an alert fires. Members stop guessing and start understanding.",
+detail:"When a buy alert fires, members have two reactions. Either they act on it, or they freeze because they do not understand the reasoning. An AI system trained on how you think about your trades automatically writes a brief, plain English explanation every time an alert fires.",
 why:"Understanding why a trade is happening builds confidence in the strategy. Confident members stay longer and become your strongest advocates.",
 tools:["AI writing trained on your strategy","Alert notification system"],
 steps:[["Define how you explain a trade","The trigger, the context, the key level to watch."],["Train the AI on your explanations","Feed it your past commentary."],["Connect it to the alert system","Every time an alert fires, the explanation is generated and attached."],["Review the first batch","Check the first ten explanations and refine until they sound like you."]],
 impact:[["Revenue impact",65],["Time saved",75],["Member experience",85]]},
-
 {name:"Personal portfolio view",t:"vision",desc:"Each member can see how their own portfolio aligns with the Spartan strategy, personalised to them.",
-detail:"Imagine a member logging in and seeing not just the general watch list but their own portfolio, the stocks they hold, their entry prices, their current gain or loss, mapped against the Spartan strategy. AI tells them where they are overexposed and what the strategy says about each of their positions.",
+detail:"Imagine a member logging in and seeing not just the general watch list but their own portfolio mapped against the Spartan strategy. AI tells them where they are overexposed and what the strategy says about each of their positions.",
 why:"The more personal the product feels the more essential it becomes. A member who sees their own portfolio reflected in your platform has a much stronger reason to stay.",
 tools:["Secure member login","Portfolio tracking","AI strategy analysis"],
 steps:[["Build a secure place for members to record their holdings","Simple input, stock name, how many shares, what they paid."],["Map their portfolio against your strategy","AI scores each holding against your framework."],["Generate a weekly personal summary","Each member gets a brief personal update on their specific portfolio."],["Make it a feature of the premium tier","A key reason to upgrade."]],
 impact:[["Revenue impact",80],["Time saved",55],["Member experience",95]]},
-
 {name:"Morning market briefing",t:"now",desc:"A curated summary of overnight market news relevant only to your watch list, delivered to the group every morning.",
-detail:"Every morning markets move and news breaks. Most of it is irrelevant to your members. An AI briefing system scans dozens of financial news sources every morning and delivers a concise curated summary to the group. Only what is directly relevant to the stocks on your watch list, written clearly so every member understands it.",
+detail:"An AI briefing system scans dozens of financial news sources every morning and delivers a concise curated summary to the group. Only what is directly relevant to the stocks on your watch list, written clearly so every member understands it.",
 why:"Information overload is one of the biggest challenges for new investors. Being the person who cuts through the noise and tells them exactly what matters builds enormous trust.",
 tools:["Financial news aggregation","AI summarisation","Automatic group posting"],
 steps:[["Define your news sources","Which publications matter for your specific stocks?"],["Set up daily monitoring","AI scans these sources every morning from 6am."],["Filter and summarise","Only news relevant to your watch list gets through."],["Post to the group by 8am","Members wake up to a clean clear summary of what they need to know."]],
 impact:[["Revenue impact",55],["Time saved",70],["Member experience",80]]},
-
 {name:"Earnings reminders",t:"now",desc:"AI tracks when every stock on your watch list is reporting earnings and warns members in advance automatically.",
-detail:"Earnings reports are the moments when stock prices move most dramatically. Members who are not prepared can be caught off guard. An automated earnings calendar monitors every stock and sends reminders to the group three days before and the morning of every earnings date, plus a brief note on what to watch for.",
-why:"Helping members avoid being surprised by earnings is enormously valuable. It demonstrates that you are watching out for them and prevents panicked messages flooding the group.",
+detail:"An automated earnings calendar monitors every stock and sends reminders to the group three days before and the morning of every earnings date, plus a brief note on what to watch for.",
+why:"Helping members avoid being surprised by earnings demonstrates that you are watching out for them and prevents panicked messages flooding the group.",
 tools:["Earnings calendar data","Automated group notifications"],
 steps:[["Pull earnings dates for all your stocks","Connect to a data source that tracks upcoming dates automatically."],["Set the reminder schedule","Three days before and morning of, plus a brief preview each time."],["Generate the preview notes","A short what to watch note based on analyst expectations."],["Post the results summary","After earnings, AI summarises what happened in plain English."]],
 impact:[["Revenue impact",50],["Time saved",70],["Member experience",80]]},
-
 {name:"Strategy track record",t:"vision",desc:"A verified public record of the Spartan strategy performance over time, your most powerful sales tool.",
-detail:"Imagine being able to show a potential member a clear, independently verifiable record of every buy and sell alert you have issued over the past three years. Not curated highlights but the full picture. An AI system can run your strategy rules against historical price data and generate this record. It becomes the single most compelling thing you can show anyone considering joining.",
+detail:"Imagine being able to show a potential member a clear, independently verifiable record of every buy and sell alert you have issued. Not curated highlights but the full picture. This becomes the single most compelling thing you can show anyone considering joining.",
 why:"Everything else you say about your strategy is you talking about yourself. A verified track record is evidence. The difference in terms of conversion and credibility is enormous.",
 tools:["Historical market data","Strategy rules in code","Performance dashboard"],
-steps:[["Write down every rule in the Spartan strategy","Every condition for a buy alert, every condition for an exit."],["Run it against historical data","Apply those rules to past prices to generate a hypothetical track record."],["Calculate the performance metrics","Total return, win rate, average gain per trade, the full picture."],["Build a clean shareable display","A page you can send to prospects that shows the track record honestly."]],
+steps:[["Write down every rule in the Spartan strategy","Every condition for a buy alert, every condition for an exit."],["Run it against historical data","Apply those rules to past prices to generate a track record."],["Calculate the performance metrics","Total return, win rate, average gain per trade, the full picture."],["Build a clean shareable display","A page you can send to prospects that shows the track record honestly."]],
 impact:[["Revenue impact",90],["Time saved",30],["Member experience",80]]},
-
 {name:"Crypto watch list",t:"soon",desc:"Extend your watch list into crypto. AI monitors the signals you care about and alerts members when the timing looks right.",
-detail:"You mentioned that October tends to be a historically significant entry point for crypto. Your members are increasingly investing across asset classes. An AI layer on top of your existing watch list monitors the specific signals and indicators you use to assess crypto timing and issues alerts when your criteria are met, in the same format as your stock alerts.",
-why:"Adding crypto to your watch list increases the value of the membership without requiring much additional work from you. It also gives members a reason to stay engaged during quieter periods in the stock market.",
+detail:"An AI layer on top of your existing watch list monitors the specific signals and indicators you use to assess crypto timing and issues alerts when your criteria are met, in the same format as your stock alerts.",
+why:"Adding crypto to your watch list increases the value of the membership without requiring much additional work from you.",
 tools:["Crypto market data","On-chain data monitoring","Alert system"],
 steps:[["Define your crypto criteria","Which signals tell you the timing is right?"],["Connect the data feeds","Live crypto price data and the on-chain metrics you care about."],["Set the alert thresholds","When enough criteria are met, an alert fires to the group."],["Add a crypto section to the watch list","A separate section specifically for your crypto positions."]],
 impact:[["Revenue impact",65],["Time saved",70],["Member experience",75]]}
 ]},
-
-{id:"coaching",label:"Personalised AI coaching",icon:"<br>",bg:"#1a1530",items:[
+{id:"coaching",label:"Personalised AI coaching",icon:"&#129504;",bg:"#1a1530",items:[
 {name:"Your personal AI coach",t:"now",desc:"Every member gets a version of you available 24 hours a day trained on everything you know.",
 detail:"A personal AI coach built entirely on your knowledge, your style, and your strategy. Members ask it questions about a specific stock, about whether they should be buying right now, about how to apply the Spartan approach to their situation, and they get an answer in your voice. It is not a generic financial chatbot. It is you, available to every member, all day every day.",
 why:"You built SPA on your expertise and your relationship with your community. But you only have one body and 24 hours in a day. This multiplies you. Your knowledge reaches every member personally at the moment they need it.",
 tools:["AI trained on your complete content library","Connected to WhatsApp and your platform"],
 steps:[["Pull together everything you have ever created","Every podcast, every course lesson, every group message, every strategy document."],["Give it your personality and boundaries","How do you communicate? What will you advise on and what will you not?"],["Make it available to members","They access it through WhatsApp by messaging it directly."],["Define when it escalates to you","Personal financial situations and major decisions come to you."],["Keep feeding it","Every new piece of content you create makes it smarter."]],
 impact:[["Revenue impact",90],["Time saved",85],["Member experience",95]]},
-
 {name:"Weekly personal check-in",t:"now",desc:"Every member receives a personal message from you every Monday summarising the week and setting them up for the week ahead.",
-detail:"Imagine every member waking up on Monday morning to a message that feels like you wrote it personally for them. A quick summary of key things that happened in the market last week, what is on the radar this week, and a check-in on how they are getting on. For your Spartan members it is more detailed. For standard members a little more general. Either way it feels like personal attention.",
+detail:"Imagine every member waking up on Monday morning to a message that feels like you wrote it personally for them. A quick summary of key things that happened in the market last week, what is on the radar this week, and a check-in on how they are getting on.",
 why:"Members who feel personally attended to are far more likely to stay. The perception that you are watching out for them individually creates loyalty that is very hard to break.",
 tools:["Automated personalised messaging","Watch list data integration"],
 steps:[["Design what the perfect Monday message looks like","What does every member need to know to start their week well?"],["Create a version for each tier","Spartan members get more detail than standard members."],["Pull in live data","Key movements from last week and important dates for this week added automatically."],["Send at 8am every Monday","Every member receives their message without you writing anything."]],
 impact:[["Revenue impact",65],["Time saved",80],["Member experience",85]]},
-
 {name:"New member journey",t:"now",desc:"Every new member is guided through their first 7 days step by step so they get value quickly and never feel lost.",
-detail:"The first week makes or breaks a new member. If they join, feel overwhelmed, and never get a proper handle on how to use the watch list they will cancel within a month. A structured 7-day journey guides every new member from day one. Here is what to do first, here is how the Spartan strategy works, here is your first trade walkthrough. By day seven they are confident active members.",
+detail:"The first week makes or breaks a new member. A structured 7-day journey guides every new member from day one. Here is what to do first, here is how the Spartan strategy works, here is your first trade walkthrough. By day seven they are confident active members.",
 why:"Members who understand the product in their first week stay. Members who do not, leave. This is the single most impactful thing you can build for reducing early churn.",
 tools:["Automated day-by-day messaging","Connected to your platform content"],
-steps:[["Map the perfect first 7 days","What does a new member need to know and do each day?"],["Write the daily messages","One message per day in your voice, clear, warm, and action-focused."],["Automate the sequence","Messages go out based on when they joined, so day one is always their first day."],["Track where people drop off","Monitor completion rates for each day and improve the messages that are losing people."]],
+steps:[["Map the perfect first 7 days","What does a new member need to know and do each day?"],["Write the daily messages","One message per day in your voice, clear, warm, and action-focused."],["Automate the sequence","Messages go out based on when they joined, so day one is always their first day."],["Track where people drop off","Monitor completion rates and improve the messages that are losing people."]],
 impact:[["Revenue impact",70],["Time saved",80],["Member experience",90]]},
-
 {name:"Whole life coaching",t:"vision",desc:"Extend the AI coach beyond investing into health, habits, and wellbeing for members who want support across every area of their life.",
-detail:"You described a vision of a coach that helps people with everything, not just stocks but fitness, nutrition, daily habits, sleep, energy. The same member who checks their portfolio in the morning would also log their workout, track their calories, and get a nudge about their sleep from the same AI. The financial coaching is the entry point. The whole life coaching is what makes the platform something people could never imagine leaving.",
+detail:"You described a vision of a coach that helps people with everything, not just stocks but fitness, nutrition, daily habits, sleep, energy. The same member who checks their portfolio in the morning would also log their workout and get a nudge about their sleep from the same AI.",
 why:"The more areas of a person life your platform touches the more essential it becomes. A member who uses SPA for investing, health, and daily habits does not have one reason to stay, they have ten.",
 tools:["Health data integration","Personalised daily coaching","Multi-domain AI assistant"],
 steps:[["Start with the simplest additions","Daily step count, water intake, a brief mood check."],["Connect to health devices","Members who want to connect their fitness tracker can do so."],["Weave it into the daily check-in","The morning message covers not just the market but how they are doing physically."],["Launch as a premium tier feature","A compelling reason to upgrade."]],
 impact:[["Revenue impact",75],["Time saved",40],["Member experience",90]]},
-
 {name:"Career coaching layer",t:"vision",desc:"AI helps members earn more in their career because the more they earn the more they can invest.",
-detail:"You made a powerful observation. If your members earn more they invest more, which means they get more from the Spartan strategy, which means they stay longer and value the membership more. A career coaching layer helps members understand where the job market is moving, whether their skills are in demand, and what moves they could make to increase their income.",
+detail:"If your members earn more they invest more, which means they get more from the Spartan strategy, which means they stay longer and value the membership more. A career coaching layer helps members understand where the job market is moving and what moves they could make to increase their income.",
 why:"The flywheel is simple. Earn more, invest more, win more, stay longer. Helping members with their career is one of the most powerful indirect drivers of member lifetime value.",
 tools:["Job market intelligence","Skills demand tracking","Personalised career guidance"],
 steps:[["Build a simple career profile for each member","Current role, experience level, goals, location."],["Track what is happening in the job market","Which industries are growing, which skills are commanding premiums."],["Surface personalised intelligence","Once a month each member gets a note on what is relevant to their situation."],["Make it a conversation","Members can ask the AI coach career questions the same way they ask investing questions."]],
 impact:[["Revenue impact",70],["Time saved",40],["Member experience",85]]},
-
 {name:"Spiritual layer",t:"vision",desc:"A daily reflection and Bible verse for members who want that dimension of whole-person development.",
-detail:"You talked about this specifically. An AI that has read the Bible from cover to cover and can offer a relevant verse, a reflection, or a guiding thought for the day. Not replacing faith or a pastor but supplementing daily spiritual practice with something thoughtful and consistent. Members who want this layer opt in.",
+detail:"An AI that has read the Bible from cover to cover and can offer a relevant verse, a reflection, or a guiding thought for the day. Not replacing faith or a pastor but supplementing daily spiritual practice with something thoughtful and consistent. Members who want this layer opt in.",
 why:"Spiritual wellbeing is deeply personal and rarely served well by technology. Offering it as part of a community that genuinely cares about the whole person creates an emotional connection that is almost impossible to replicate elsewhere.",
 tools:["Complete Bible knowledge base","Personalised reflection generator","Opt-in delivery"],
 steps:[["Define the scope carefully","What will this do and what will it not do?"],["Build the content base","The full Bible, classical commentary, devotional material."],["Create a simple daily format","A verse, a reflection, and an optional question to sit with."],["Make it entirely opt-in","Members who want it turn it on. Those who do not will never see it."]],
 impact:[["Revenue impact",55],["Time saved",30],["Member experience",90]]},
-
 {name:"Personal learning paths",t:"soon",desc:"Each member gets a course journey tailored to their level. Beginners and experienced investors never get the same content.",
-detail:"Right now every new member gets the same courses in the same order regardless of whether they have been investing for ten years or ten days. A simple assessment when someone joins allows AI to build them a custom sequence of content that starts exactly where they are and moves at the right pace.",
+detail:"A simple assessment when someone joins allows AI to build them a custom sequence of content that starts exactly where they are and moves at the right pace.",
 why:"Relevant content keeps people engaged. Irrelevant content whether too basic or too advanced is the fastest route to disengagement and cancellation.",
 tools:["Member knowledge assessment","Personalised content sequencing","Course platform integration"],
 steps:[["Build a short joining quiz","Five questions maximum about experience level and goals."],["Tag all your existing content by level","Beginner, intermediate, advanced."],["Generate a custom path","Based on quiz answers, AI builds their personal sequence."],["Update the path as they progress","As they complete content the recommendations evolve."]],
 impact:[["Revenue impact",65],["Time saved",55],["Member experience",85]]},
-
 {name:"Goal tracking",t:"soon",desc:"Members set a financial goal when they join and AI tracks their progress, celebrating wins and redirecting when they drift.",
-detail:"Most people join SPA with a specific goal. Build a portfolio worth 20,000 pounds, earn a certain amount from investments each month, achieve financial independence. A goal tracking system captures the goal on day one, breaks it down into monthly milestones, and checks in on progress regularly. When a member hits a milestone it is celebrated. When they are drifting off track AI nudges them back.",
-why:"Members who are actively working toward a specific goal have a reason to stay that goes beyond the quality of your content. That creates retention that is almost impossible to compete with.",
+detail:"A goal tracking system captures the goal on day one, breaks it down into monthly milestones, and checks in on progress regularly. When a member hits a milestone it is celebrated. When they are drifting off track AI nudges them back.",
+why:"Members who are actively working toward a specific goal have a reason to stay that goes beyond the quality of your content.",
 tools:["Goal capture and tracking","Progress monitoring","Automated milestone messages"],
 steps:[["Ask every new member to set their goal","On day two of their journey, what are they working toward and by when?"],["Break it into milestones","AI maps out the 30, 60, and 90 day steps that lead to their goal."],["Check in monthly","A brief progress message, here is where you are, here is what to focus on this month."],["Make milestones feel significant","When someone hits a milestone celebrate it in the group with their permission."]],
 impact:[["Revenue impact",70],["Time saved",60],["Member experience",85]]}
 ]},
-
-{id:"ops",label:"Operations and admin",icon:"<br>",bg:"#101a12",items:[
+{id:"ops",label:"Operations and admin",icon:"&#9881;",bg:"#101a12",items:[
 {name:"AI inbox manager",t:"now",desc:"AI reads your emails, handles the routine ones, and only brings you what actually needs your attention.",
-detail:"Your inbox is probably one of the biggest drains on your time. Newsletters, admin, member queries, partnership enquiries, all landing in the same place demanding attention. An AI inbox manager reads everything, handles anything routine in your voice, flags the things that need you, and files everything else. You go from spending two hours a day on email to spending twenty minutes on things that genuinely matter.",
+detail:"An AI inbox manager reads everything, handles anything routine in your voice, flags the things that need you, and files everything else. You go from spending two hours a day on email to spending twenty minutes on things that genuinely matter.",
 why:"Every hour you spend on email is an hour you are not spending on growing the community, creating content, or developing the strategy.",
 tools:["Email management AI","Calendar integration"],
 steps:[["Connect it to your inbox","Set up access so it can read and draft on your behalf."],["Train it on your communication style","Show it how you write, what tone you use with different people."],["Define what it handles and what it passes to you","Routine queries and admin it handles. Anything strategic or sensitive you handle."],["Review for the first few weeks","Check everything it does at first to make sure it represents you correctly."]],
 impact:[["Revenue impact",30],["Time saved",90],["Member experience",50]]},
-
 {name:"Subscription management",t:"now",desc:"Failed payments, cancellations, pauses, and upgrades are all handled automatically with a save attempt built in.",
-detail:"Subscription management is invisible when it works and a headache when it does not. Failed payments that go unnoticed become lost revenue. Cancellations without a save attempt are lost members. An automated system handles every subscription event, retrying failed payments, sending polite reminders, offering alternatives before someone cancels, and keeping your subscriber count accurate at all times.",
-why:"Subscription revenue leaks happen quietly. A failed payment here, a missed cancellation there. Individually small, collectively significant. Plugging these leaks automatically recovers revenue you have already earned.",
+detail:"An automated system handles every subscription event, retrying failed payments, sending polite reminders, offering alternatives before someone cancels, and keeping your subscriber count accurate at all times.",
+why:"Subscription revenue leaks happen quietly. Plugging these leaks automatically recovers revenue you have already earned.",
 tools:["Payment platform automation","Member communication"],
 steps:[["Map out every subscription event","Payment success, failure, retry, pause request, cancellation, reactivation."],["Build an automatic response for each","What happens and what message goes out for each scenario?"],["Add a save step before cancellation","Before access is removed, offer a pause or alternative."],["Test every scenario","Go through each one yourself to make sure it works correctly."]],
 impact:[["Revenue impact",70],["Time saved",85],["Member experience",70]]},
-
 {name:"Compliance protection",t:"now",desc:"Every piece of content automatically gets the right financial disclaimer attached keeping you on the right side of the rules.",
-detail:"Operating in the financial education space in the UK comes with regulatory responsibilities. Every time you share a watch list update, issue a trade alert, or publish investment commentary the right disclaimer needs to be present. An automated compliance layer reads every piece of outgoing content and attaches the appropriate disclaimer automatically, every time, without fail.",
+detail:"An automated compliance layer reads every piece of outgoing content and attaches the appropriate disclaimer automatically, every time, without fail.",
 why:"One oversight in this area can create serious problems. Automating compliance is the cheapest possible protection against a risk that could otherwise be very costly.",
 tools:["Content monitoring","Automatic disclaimer attachment"],
 steps:[["Define your disclaimer types","Different content needs different disclaimers."],["Set up automatic detection","AI reads outgoing content and identifies which category it falls into."],["Attach the right disclaimer","The correct text is added automatically before the content is posted."],["Get a legal review","Have a solicitor confirm your disclaimer wording is appropriate."]],
 impact:[["Revenue impact",40],["Time saved",70],["Member experience",40]]},
-
 {name:"Business dashboard",t:"now",desc:"One screen that shows you how your entire business is performing, updated in real time.",
-detail:"Right now your key numbers are scattered across different platforms. Subscriber count is in WOP. Social analytics are in separate apps. WhatsApp gives you nothing. Getting a clear picture of how the business is performing requires logging into four different places. A unified dashboard pulls all of this into one place, monthly revenue, new members, cancellations, engagement levels, content performance, updated automatically every day.",
+detail:"A unified dashboard pulls all of your key numbers into one place, monthly revenue, new members, cancellations, engagement levels, content performance, updated automatically every day.",
 why:"You cannot make good business decisions without clear information. Knowing your numbers at a glance every morning means you notice problems early and double down on what is working.",
 tools:["Data connection across platforms","Visual dashboard"],
 steps:[["Decide what your 10 most important numbers are","Revenue, member count, new sign-ups, cancellations, engagement rate."],["Connect the data sources","Pull from WOP, your social platforms, and your payment system."],["Build the dashboard","A single clean screen, numbers at the top, trends below."],["Set up alerts for warning signs","If cancellations spike or revenue drops you want to know immediately."]],
 impact:[["Revenue impact",55],["Time saved",65],["Member experience",45]]},
-
 {name:"Team weekly brief",t:"soon",desc:"AI writes a weekly summary for your VA and any team members so everyone knows what happened and what needs doing.",
-detail:"As you bring people in to help run SPA, keeping everyone aligned becomes critical and time-consuming. An AI weekly brief solves this automatically. Every Monday morning it assembles a clear summary of the past week, what happened in the community, what content performed, which members need follow-up, and what the priorities are for the week ahead. Everyone reads it and starts the week on the same page.",
-why:"A team that is well-informed and aligned moves faster and wastes less time on miscommunication. A brief that writes itself is the most efficient way to achieve that.",
+detail:"Every Monday morning AI assembles a clear summary of the past week, what happened in the community, what content performed, which members need follow-up, and what the priorities are for the week ahead.",
+why:"A team that is well-informed and aligned moves faster and wastes less time on miscommunication.",
 tools:["Data aggregation from your platforms","Automated email delivery"],
 steps:[["Define what the brief covers","What does your team need to know each week?"],["Connect the data sources","AI pulls from your community platform, content analytics, and task list."],["Review the first few issues","Check it is capturing the right information."],["Send it automatically every Monday","Team members receive it at 7am before the week begins."]],
 impact:[["Revenue impact",40],["Time saved",75],["Member experience",50]]},
-
 {name:"Revenue reporting",t:"soon",desc:"AI generates your monthly revenue summary automatically ready for your accountant.",
-detail:"Pulling together your monthly revenue figures means logging into WOP, cross-referencing with your payment platform, accounting for any crypto treasury movements, and assembling everything into a format your accountant can use. An automated system pulls all of this together on the first of each month and delivers a clean categorised summary, no assembly required.",
-why:"Clean accurate monthly financials are the foundation of a properly run business. Automating this frees up time and removes the risk of errors from manual assembly.",
+detail:"An automated system pulls all of your revenue data together on the first of each month and delivers a clean categorised summary, no assembly required.",
+why:"Clean accurate monthly financials are the foundation of a properly run business.",
 tools:["Payment platform data","Crypto treasury connection","Reporting template"],
-steps:[["Define the reporting format","Work with your accountant to establish how they need the data structured."],["Connect your revenue sources","WOP subscriptions, any other income, crypto treasury movements."],["Set the monthly automation","On the first of each month the report is generated for the previous month."],["Deliver directly to your accountant","It goes to them by email, you do not need to be involved at all."]],
+steps:[["Define the reporting format","Work with your accountant to establish how they need the data structured."],["Connect your revenue sources","WOP subscriptions, any other income, crypto treasury movements."],["Set the monthly automation","On the first of each month the report is generated for the previous month."],["Deliver directly to your accountant","It goes to them by email."]],
 impact:[["Revenue impact",35],["Time saved",80],["Member experience",30]]},
-
 {name:"Podcast booking agent",t:"soon",desc:"AI finds relevant podcasts, sends your pitch, and keeps a full calendar of upcoming appearances without you chasing anyone.",
-detail:"Podcast appearances are your best lead generation channel. But finding the right shows, researching the hosts, writing a pitch that does not sound generic, following up when you do not hear back, all of this is a lot of work to do consistently. An AI agent does all of it continuously. You only need to get involved when someone says yes.",
-why:"The more podcast appearances you make the more content you have, the more people find you, the more members join. Systematising the booking process means your pipeline is always being built.",
+detail:"An AI agent identifies podcasts whose audiences match your ideal member, researches each host, sends a personalised pitch from you, and follows up if there is no response. You only need to get involved when someone says yes.",
+why:"The more podcast appearances you make the more content you have, the more people find you, the more members join.",
 tools:["Podcast discovery","Personalised outreach automation","Appearance calendar"],
 steps:[["Define what a good podcast looks like for you","Audience type, size range, topic areas."],["Build the ongoing discovery pipeline","AI identifies new opportunities every month."],["Generate personalised pitches","Each pitch is researched and specific to that show, not a generic template."],["Automate the follow-up","If there is no reply after a week, a follow-up goes out automatically."]],
 impact:[["Revenue impact",65],["Time saved",70],["Member experience",45]]}
 ]},
-
-{id:"platform",label:"Platform and tech build",icon:"<br>",bg:"#1a1018",items:[
+{id:"platform",label:"Platform and tech build",icon:"&#128295;",bg:"#1a1018",items:[
 {name:"Your own SPA app",t:"soon",desc:"A proper app for SPA built using AI development tools in weeks, not months, without a large dev team.",
-detail:"The era of needing a big development team and six months to build an app is over. Using AI-powered development tools a skilled consultant can build a functional, professional web app for SPA in a matter of weeks. Version one covers the essentials, member login, live watch list, course library, the AI coach, and subscription management. You own it completely. No platform dependency.",
-why:"Right now your business is built on platforms other people own, WOP, WhatsApp, Thinkific. That is fine as a starting point but it is a strategic risk long-term. Your own app means you own your members, your data, and your future.",
+detail:"Using AI-powered development tools a skilled consultant can build a functional, professional web app for SPA in a matter of weeks. Version one covers the essentials, member login, live watch list, course library, the AI coach, and subscription management. You own it completely. No platform dependency.",
+why:"Right now your business is built on platforms other people own. Your own app means you own your members, your data, and your future.",
 tools:["AI-assisted app development","Cloud hosting","Payments integration"],
 steps:[["Define what must be in version one","Watch list, AI coach, course content, member login, payment management."],["Design the architecture","Decisions made now determine how easily everything scales later."],["Build using AI development tools","AI writes the majority of the code, reducing build time dramatically."],["Test with a small group first","20 to 30 trusted members try it before everyone migrates."],["Run both platforms in parallel","Members gradually move to the new app. No cliff edge."]],
 impact:[["Revenue impact",85],["Time saved",60],["Member experience",90]]},
-
 {name:"Member home dashboard",t:"soon",desc:"One place where every member sees everything that matters to them, their watch list, their coach, their courses, their goals.",
-detail:"Right now a member experience is fragmented. The watch list is somewhere, the courses are somewhere else, the AI coach is in WhatsApp, the community is in WOP. A centralised member dashboard brings all of it into one clean interface, their daily destination. They open it in the morning, see what moved overnight, check what the AI coach suggests, review their goal progress. It sits alongside WhatsApp, not replacing it.",
+detail:"A centralised member dashboard brings all of it into one clean interface, their daily destination. They open it in the morning, see what moved overnight, check what the AI coach suggests, review their goal progress. It sits alongside WhatsApp, not replacing it.",
 why:"Apps that become a daily habit are impossible to cancel. When opening your app is part of someone morning routine the membership becomes woven into their life.",
 tools:["Member app","Personalised content feed","Progress tracking"],
 steps:[["Design the perfect daily view","What does a member need to see the moment they open the app?"],["Build each module","Watch list, AI coach chat, course library, goal tracker."],["Create a reason to open it every morning","A daily brief delivered at 7am."],["Roll out to your top tier first","Spartan members get it first and their feedback shapes the final version."]],
 impact:[["Revenue impact",80],["Time saved",55],["Member experience",90]]},
-
 {name:"AI in your WhatsApp groups",t:"now",desc:"Deploy an AI presence directly into your WhatsApp groups, answering questions, posting updates, and keeping things running without you.",
-detail:"WhatsApp is the heart of SPA and it is not going anywhere. But you do not have to be available in it 24 hours a day for it to feel alive. An AI agent deployed into your groups answers member questions in your voice, posts the morning market brief, sends trade alert notifications, and runs the welcome flow for new members. All within the interface your members already love.",
+detail:"An AI agent deployed into your groups answers member questions in your voice, posts the morning market brief, sends trade alert notifications, and runs the welcome flow for new members. All within the interface your members already love.",
 why:"Adding AI to WhatsApp multiplies the value of your existing community without any friction. Members get a better more responsive experience. You get your time back.",
 tools:["WhatsApp Business API","AI conversation management"],
 steps:[["Apply for WhatsApp Business access","This requires an application to Meta and takes one to two weeks to approve. Start this first."],["Define what the AI handles","Which questions does it answer? What does it post and when?"],["Connect the intelligence","The AI coach you have built is the brain. WhatsApp is just the delivery channel."],["Introduce it to your community","Post a message explaining there is now an AI assistant in the group."]],
 impact:[["Revenue impact",65],["Time saved",80],["Member experience",85]]},
-
 {name:"Engagement rewards",t:"soon",desc:"Members earn recognition and rewards for being active, creating habits that make leaving feel unnatural.",
-detail:"The most engaged members are the least likely to cancel. Points, levels, badges, and leaderboards are proven tools that make regular engagement feel rewarding. Members earn points for completing course modules, posting wins, referring friends, and hitting portfolio milestones. A weekly leaderboard posted in the group creates healthy competition. Reaching a new level unlocks something tangible.",
+detail:"Points, levels, badges, and leaderboards are proven tools that make regular engagement feel rewarding. Members earn points for completing course modules, posting wins, referring friends, and hitting portfolio milestones. A weekly leaderboard posted in the group creates healthy competition.",
 why:"Every point a member earns is a small reason to stay. Every badge is a mark of identity within the community. These things accumulate into a community that feels alive and worth belonging to.",
 tools:["Points and rewards system","Community leaderboard","Achievement tracking"],
 steps:[["Define what earns points","Completing a module, posting a win, referring a member, hitting a goal milestone."],["Design the level structure","What are the tiers called? What does each level unlock?"],["Build the weekly leaderboard","Posted in the group every Monday, celebrating the most active members."],["Tie levels to real rewards","Reaching Elite tier unlocks a personal call with Deb. Make it worth striving for."]],
 impact:[["Revenue impact",70],["Time saved",40],["Member experience",85]]},
-
 {name:"Member data and privacy",t:"soon",desc:"Build the secure foundation that allows members to safely share personal data, the basis for the whole life coach vision.",
-detail:"The whole life coach you have described requires members to trust you with personal information, their portfolio, their health data, their career details. Building that trust requires more than good intentions. It requires a proper framework where members can see exactly what you hold about them, choose what to share, and have confidence their information is secure.",
-why:"Personal data is the fuel for personalisation. But you cannot collect it without trust. Building the framework correctly now is much cheaper than having to rebuild it later when you have ten thousand members.",
+detail:"The whole life coach you have described requires members to trust you with personal information. Building that trust requires a proper framework where members can see exactly what you hold about them, choose what to share, and have confidence their information is secure.",
+why:"Personal data is the fuel for personalisation. But you cannot collect it without trust. Building the framework correctly now is much cheaper than having to rebuild it later.",
 tools:["Secure data storage","Member privacy controls","Legal compliance framework"],
 steps:[["Define what data you want to collect and why","Be deliberate. Only ask for what you genuinely need."],["Build clear consent into the sign-up process","Members choose exactly what they share."],["Implement secure storage","Member data is encrypted and only accessible to people who need it."],["Get a legal review","A data protection solicitor confirms you are compliant with UK data protection law."]],
 impact:[["Revenue impact",60],["Time saved",30],["Member experience",75]]},
-
 {name:"Your own AI model",t:"vision",desc:"An AI coach trained specifically and exclusively on you, not a generic AI but a genuine Deb AI.",
-detail:"Right now the AI coach draws on your content but runs on a general-purpose AI underneath. Over time the most powerful version is an AI that has been trained so thoroughly on your specific way of thinking, your strategy, your communication style, that it is genuinely distinct from anything a competitor could build. This becomes a genuine defensible asset that belongs to SPA and nobody else.",
-why:"A general-purpose AI given your content can be replicated by a competitor tomorrow. An AI fine-tuned on years of your specific knowledge cannot. This is the long-term moat.",
+detail:"Over time the most powerful version is an AI that has been trained so thoroughly on your specific way of thinking, your strategy, your communication style, that it is genuinely distinct from anything a competitor could build. This becomes a genuine defensible asset that belongs to SPA and nobody else.",
+why:"A general-purpose AI given your content can be replicated by a competitor tomorrow. An AI trained on years of your specific knowledge cannot. This is the long-term moat.",
 tools:["Custom AI model training","Your complete content archive","Ongoing improvement pipeline"],
 steps:[["Build the training archive","Every podcast, every message, every course, every commentary, cleaned and organised."],["Run the training process","The model is trained on your specific dataset."],["Evaluate rigorously","Test it against real member questions and compare its answers to what you would actually say."],["Deploy and keep improving","Replace the general AI layer with your custom model and feed it new content every month."]],
 impact:[["Revenue impact",85],["Time saved",70],["Member experience",95]]},
-
 {name:"Built to scale to a million members",t:"vision",desc:"Design the technology from the start so that growing from 1000 to 1000000 members is straightforward, not a crisis.",
-detail:"Every technical decision you make now, how the app is built, how data is stored, how the AI coach is deployed, either makes scaling easier or harder. Companies that do not think about scale early end up having to rebuild everything expensively when they need to grow fast. The right architecture means going from 1000 to 10000 to 100000 members is a matter of turning dials, not tearing things down.",
-why:"You have said the vision is millions of users. That starts with a thousand Spartans. But the decisions that determine whether you can get from a thousand to a million need to be made before you get to a thousand.",
+detail:"Every technical decision you make now either makes scaling easier or harder. The right architecture means going from 1000 to 10000 to 100000 members is a matter of turning dials, not tearing things down.",
+why:"You have said the vision is millions of users. The decisions that determine whether you can get from a thousand to a million need to be made before you get to a thousand.",
 tools:["Scalable cloud infrastructure","Modular application design","Performance testing"],
 steps:[["Review the current architecture against the vision","What would break at 10000 members? Identify the bottlenecks now."],["Define the scaling thresholds","What changes at 1000, 10000, 100000 members? Plan for each step."],["Build every feature as an independent component","Each piece can scale or be replaced without touching the rest."],["Test regularly at 10x your current size","Simulate the load of 10 times your current membership and fix what breaks."]],
 impact:[["Revenue impact",80],["Time saved",40],["Member experience",80]]}
 ]},
-
-{id:"brand",label:"Brand and thought leadership",icon:"<br>",bg:"#1a1810",items:[
+{id:"brand",label:"Brand and thought leadership",icon:"&#11088;",bg:"#1a1810",items:[
 {name:"LinkedIn on autopilot",t:"now",desc:"Consistent high quality LinkedIn content in your voice, posted multiple times a week without you writing anything.",
-detail:"Your 300 pound a month Spartan member is almost certainly on LinkedIn. They are a professional, probably an entrepreneur or senior employee, and they research people before they commit to anything. A sparse LinkedIn profile means they find nothing when they look you up. AI writes three to five LinkedIn posts a week in your voice. You spend thirty minutes reviewing them and they go out on schedule.",
+detail:"Your 300 pound a month Spartan member is almost certainly on LinkedIn. They research people before they commit to anything. A sparse LinkedIn profile means they find nothing when they look you up. AI writes three to five LinkedIn posts a week in your voice. You spend thirty minutes reviewing them and they go out on schedule.",
 why:"The high-ticket members you want to attract do their due diligence before paying. LinkedIn is usually their first stop. A strong consistent presence there is the difference between being taken seriously and being passed over.",
 tools:["AI content writing","LinkedIn scheduling"],
 steps:[["Define what you stand for on LinkedIn","What are the three or four things you consistently talk about?"],["Generate a week of posts every Monday","AI draws from your recent activity and produces five posts for the week ahead."],["Review in thirty minutes","Read through, change anything that does not sound right, approve."],["Engage with the responses","AI drafts replies to comments for you to approve."]],
 impact:[["Revenue impact",70],["Time saved",80],["Member experience",45]]},
-
 {name:"The Spartan Investor book",t:"soon",desc:"Turn everything you know into a book. AI does the heavy lifting, you provide the knowledge and the final voice.",
-detail:"You already have more than enough material to write a book. Every podcast appearance, every course lesson, every group message where you explained a concept clearly, that is all raw material. AI organises it into chapters, identifies the gaps, writes the first draft, and gives you something to react to and refine. The finished book becomes a lead magnet, a product in its own right, and a permanent credibility signal.",
+detail:"You already have more than enough material to write a book. Every podcast appearance, every course lesson, every group message where you explained a concept clearly, that is all raw material. AI organises it into chapters, writes the first draft, and gives you something to react to and refine.",
 why:"A book does things social media cannot. It positions you as an authority in a way that is permanent and hard to replicate. It opens doors, speaking invitations, media appearances, major partnerships.",
 tools:["AI writing and organisation","Self-publishing platform"],
 steps:[["Pull together all your existing content","Podcasts, courses, group highlights, strategy documents."],["Let AI organise it into a structure","Introduction, the Spartan philosophy, how to use the strategy, case studies."],["AI writes the first draft","Chapter by chapter, drawing on your content, in your voice."],["You shape the final version","Your edits, your additions, your sign-off. A professional editor does the final polish."],["Publish and distribute","On Amazon for anyone to buy, and as a free PDF for people on your email list."]],
 impact:[["Revenue impact",65],["Time saved",60],["Member experience",60]]},
-
 {name:"Podcast booking machine",t:"now",desc:"AI finds the right shows, sends your pitch, and keeps your pipeline of appearances full without you chasing anyone.",
-detail:"You told us that podcast appearances are your best source of new members and content. An AI agent works continuously to keep that pipeline full. It identifies podcasts whose audiences are made up of the kind of people who would benefit most from SPA, researches each host so the pitch feels personal, sends it from you, and follows up if there is no response.",
-why:"More appearances means more content, more reach, and more members. This is your highest-ROI marketing activity. Systematising it means it happens consistently rather than only when you find time.",
+detail:"An AI agent works continuously to keep your podcast pipeline full. It identifies shows whose audiences are made up of the kind of people who would benefit most from SPA, researches each host so the pitch feels personal, sends it from you, and follows up if there is no response.",
+why:"More appearances means more content, more reach, and more members. Systematising it means it happens consistently rather than only when you find time.",
 tools:["Podcast research and discovery","Personalised pitch automation","Appearance preparation"],
 steps:[["Define your ideal show","What audience does the host have? What size? What topics do they cover?"],["Build a continuous search","AI identifies new matching podcasts every month."],["Generate a personal pitch for each one","Specific to that show and that host, not a template."],["Automate the follow-up","No response after a week? A follow-up goes automatically."]],
 impact:[["Revenue impact",75],["Time saved",75],["Member experience",50]]},
-
 {name:"Reputation monitoring",t:"soon",desc:"AI watches for every mention of you and SPA online so you never miss a conversation about your brand.",
-detail:"People are talking about you online and you probably do not know most of it is happening. Someone shares a profit screenshot and credits SPA. A podcast listener posts about the episode you appeared on. Someone asks on Reddit if your community is worth joining. An AI monitoring system watches for all of this continuously and brings you a daily summary of what was said and by whom.",
-why:"Your reputation builds slowly and quietly. Knowing what is being said about you in real time means you can amplify the good, respond to the bad before it spreads, and identify opportunities you did not know existed.",
+detail:"An AI monitoring system watches for mentions of SPA, Debodun, and the Spartan strategy across every platform continuously and brings you a daily summary of what was said and by whom.",
+why:"Your reputation builds slowly and quietly. Knowing what is being said about you in real time means you can amplify the good and respond to the bad before it spreads.",
 tools:["Real-time brand monitoring","Sentiment tracking","Response suggestions"],
 steps:[["Set up your monitoring keywords","Your name, SPA, the Spartan strategy, and common misspellings."],["Connect every relevant platform","Social media, YouTube comments, Reddit, Google alerts."],["Get a daily digest","Every morning, a brief summary of what was said about you in the past 24 hours."],["Suggested responses for the most important mentions","AI drafts a response for you to approve."]],
 impact:[["Revenue impact",45],["Time saved",70],["Member experience",50]]},
-
 {name:"Speaking opportunities",t:"soon",desc:"AI applies for speaking slots at relevant events on your behalf keeping you on the circuit without the admin.",
-detail:"You met Debodun at NeoFest. That is the kind of room you want to be in regularly. But finding the right events, submitting applications before deadlines, and following up is a consistent burden that often gets deprioritised. An AI agent monitors the conference calendar for events in your space, identifies the ones worth applying for, drafts the application in your voice, and submits it.",
+detail:"An AI agent monitors the conference calendar for events in your space, identifies the ones worth applying for, drafts the application in your voice, and submits it. You just show up and speak.",
 why:"Every stage you stand on puts you in front of a room full of potential members and partners. It builds credibility at a scale that digital content cannot match.",
 tools:["Event discovery","Speaker application automation","Calendar management"],
 steps:[["Define the events you want to be at","What audience, what size, what topics?"],["Build a monitoring pipeline","AI watches the conference calendar and flags relevant opportunities months out."],["Draft and submit applications","Each application is tailored to the event theme and audience."],["Follow up automatically","Applications that go unacknowledged get a follow-up after two weeks."]],
 impact:[["Revenue impact",60],["Time saved",70],["Member experience",50]]},
-
 {name:"Brand evolution",t:"soon",desc:"AI analyses how your brand is perceived now versus where the vision is heading and helps you decide if a rebrand makes sense.",
-detail:"Stock Pickers Academy is a great name for what you built. But you have described a vision of a whole life coach platform for millions of people. At some point those two things might not fit in the same name. An AI-driven brand analysis looks at how your current members perceive SPA, how potential members respond to the name, and whether there is a brand identity that better represents the whole vision.",
+detail:"Stock Pickers Academy is a great name for what you built. But you have described a vision of a whole life coach platform for millions of people. An AI-driven brand analysis looks at how your current members perceive SPA and whether there is a brand identity that better represents the whole vision.",
 why:"Getting the brand right matters more as you scale. A name and identity that positions you correctly for where you are going will open doors that a narrower identity would close.",
 tools:["Brand perception research","Competitor analysis","Alternative positioning development"],
 steps:[["Understand how you are perceived now","Survey your members and your social audience. What do they think SPA is?"],["Map the gap","Compare that perception to where the vision is heading."],["Explore alternatives","AI generates 10 to 15 alternative directions with the thinking behind each one."],["Test the strongest options","Share three shortlisted options with a trusted group of Spartans."],["Make a considered decision","Armed with real data, decide whether to evolve the brand and when."]],
@@ -593,6 +671,31 @@ function buildStats(){
   var t=0,n=0,s=0,v=0;
   D.forEach(function(sec){sec.items.forEach(function(i){t++;if(i.t==="now")n++;if(i.t==="soon")s++;if(i.t==="vision")v++;})});
   qs("#sT").textContent=t;qs("#sN").textContent=n;qs("#sS").textContent=s;qs("#sV").textContent=v;
+}
+
+function findItem(secId, itemName){
+  for(var i=0;i<D.length;i++){
+    if(D[i].id===secId){
+      for(var j=0;j<D[i].items.length;j++){
+        if(D[i].items[j].name===itemName) return {sec:D[i],item:D[i].items[j]};
+      }
+    }
+  }
+  return null;
+}
+
+function buildStartCards(){
+  var wrap=qs("#start-cards");
+  STARTS.forEach(function(s){
+    var card=document.createElement("div");
+    card.className="start-card";
+    card.innerHTML='<div class="start-num">'+s.num+'</div><div class="start-name">'+s.name+'</div><div class="start-why">'+s.why+'</div><div class="start-result">'+s.result+'</div><div class="start-cta">Tap to explore in detail &rarr;</div>';
+    card.addEventListener("click",function(){
+      var found=findItem(s.secId,s.itemName);
+      if(found) openModal(found.sec,found.item);
+    });
+    wrap.appendChild(card);
+  });
 }
 
 function buildFilters(){
@@ -623,7 +726,6 @@ function openModal(sec,item){
   var impactHtml=item.impact.map(function(row){
     return '<div class="imp-row"><span class="imp-lbl">'+row[0]+'</span><div class="imp-track"><div class="imp-fill '+color+'" style="width:'+row[1]+'%"></div></div><span class="imp-score">'+row[1]+'%</span></div>';
   }).join("");
-  var badgeExtra='<span class="badge" style="background:var(--surface2);color:var(--muted);border:1px solid var(--border)">'+item.effort+' effort</span><span class="badge" style="background:var(--surface2);color:var(--muted);border:1px solid var(--border)">'+item.timeline+'</span>';
   qs("#modal-content").innerHTML=
     '<div class="m-hero">'+
       '<button class="m-close" onclick="closeModal()">&#10005;</button>'+
@@ -642,9 +744,12 @@ function openModal(sec,item){
       '<div class="m-sec"><div class="m-lbl">How it works</div><div class="steps">'+stepsHtml+'</div></div>'+
       '<div class="divider"></div>'+
       '<div class="m-sec"><div class="m-lbl">What we would use</div><div class="chips">'+toolsHtml+'</div></div>'+
+    '</div>'+
+    '<div class="m-cta-wrap">'+
+      '<div class="m-cta-text">Want to get this built for SPA? Book a call with Bolaji and we will get started.</div>'+
+      '<a class="m-cta-btn" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call with Bolaji &rarr;</a>'+
     '</div>';
-  var overlay=qs("#overlay");
-  overlay.classList.add("open");
+  qs("#overlay").classList.add("open");
   qs("#modal").scrollTop=0;
   document.body.style.overflow="hidden";
 }
@@ -678,6 +783,7 @@ function buildSections(){
 }
 
 buildStats();
+buildStartCards();
 buildFilters();
 buildSections();
 </script>
