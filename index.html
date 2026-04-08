@@ -182,16 +182,55 @@ footer{border-top:1px solid var(--border);padding:40px 2rem;text-align:center;ma
 </head>
 <body>
 
+<!-- PIN GATE -->
+<div id="pin-gate" style="position:fixed;inset:0;z-index:999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;padding:2rem">
+  <div style="width:100%;max-width:360px;text-align:center">
+    <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#f0ede8;margin-bottom:40px">Altitude <span style="color:#c9a84c">AI</span> Consulting</div>
+    <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;color:#f0ede8">Enter access code</div>
+    <div style="font-size:14px;color:rgba(240,237,232,0.55);margin-bottom:32px;line-height:1.6">This document is confidential and prepared exclusively for Stock Pickers Academy.</div>
+    <div id="pin-dots" style="display:flex;gap:14px;justify-content:center;margin-bottom:28px">
+      <div id="pd0" style="width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.13);background:transparent;transition:all 0.2s"></div>
+      <div id="pd1" style="width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.13);background:transparent;transition:all 0.2s"></div>
+      <div id="pd2" style="width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.13);background:transparent;transition:all 0.2s"></div>
+      <div id="pd3" style="width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.13);background:transparent;transition:all 0.2s"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+      <button onclick="pk('1')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">1</button>
+      <button onclick="pk('2')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">2</button>
+      <button onclick="pk('3')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">3</button>
+      <button onclick="pk('4')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">4</button>
+      <button onclick="pk('5')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">5</button>
+      <button onclick="pk('6')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">6</button>
+      <button onclick="pk('7')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">7</button>
+      <button onclick="pk('8')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">8</button>
+      <button onclick="pk('9')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">9</button>
+      <div></div>
+      <button onclick="pk('0')" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:#f0ede8;cursor:pointer">0</button>
+      <button onclick="pdel()" style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;font-size:14px;color:rgba(240,237,232,0.55);cursor:pointer">&#9003;</button>
+    </div>
+    <div id="pin-err" style="font-size:13px;color:#e24b4a;height:20px;opacity:0;transition:opacity 0.2s">Incorrect code. Please try again.</div>
+  </div>
+</div>
+<script>
+var _pe="";
+function pk(k){if(_pe.length>=4)return;_pe+=k;_upd();if(_pe.length===4)_chk();}
+function pdel(){if(_pe.length===0)return;_pe=_pe.slice(0,-1);_upd();}
+function _upd(err){for(var i=0;i<4;i++){var d=document.getElementById("pd"+i);d.style.background=i<_pe.length?(err?"#e24b4a":"#c9a84c"):"transparent";d.style.borderColor=i<_pe.length?(err?"#e24b4a":"#c9a84c"):"rgba(255,255,255,0.13)";}}
+function _chk(){if(_pe==="1234"){document.getElementById("pin-gate").style.display="none";document.getElementById("spa-main").style.display="block";document.getElementById("spa-sticky").style.display="flex";}else{_upd(true);document.getElementById("pin-err").style.opacity="1";setTimeout(function(){_pe="";_upd();document.getElementById("pin-err").style.opacity="0";},1400);}}
+</script>
+
+<div id="spa-main" style="display:none">
+
 <nav>
   <span class="nav-brand">Altitude <span>AI</span> Consulting</span>
-  <a class="nav-cta" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call</a>
+  <a class="nav-cta" href="https://wa.me/447538497415?text=Hi%20Bolaji%2C%20I%20have%20reviewed%20the%20SPA%20AI%20roadmap%20and%20I%20am%20ready%20to%20talk%20next%20steps." target="_blank">Message Bolaji</a>
 </nav>
 
 <div class="hero">
   <div class="hero-top">
     <div class="hero-left">
       <div class="eyebrow">Stock Pickers Academy &mdash; AI Roadmap</div>
-      <h1>Here is the plan.<br>Here is <em>where we start.</em></h1>
+      <h1>SPA could be running<br>on AI within <em>30 days.</em><br>Here is exactly how.</h1>
       <p class="hero-sub">Based on our conversation and a full audit of how SPA operates, Altitude AI has mapped every opportunity where AI can transform the business. Below is where we recommend starting and the full picture of what is possible.</p>
       <div class="hero-meta">
         <span class="meta-tag">Prepared by Bolaji Olatoye</span>
@@ -206,6 +245,40 @@ footer{border-top:1px solid var(--border);padding:40px 2rem;text-align:center;ma
   <div class="trust-bar">
     <div class="trust-icon">&#128161;</div>
     <div class="trust-text"><strong>About Altitude AI Consulting.</strong> We work with community founders and educators to identify, build, and deploy AI systems that save time, grow revenue, and create better member experiences. We have been inside SPA as a member, we understand how the community operates, and every recommendation on this page is specific to your business &mdash; not a generic template.</div>
+  </div>
+</div>
+
+  <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:16px 24px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+    <div style="font-size:13px;color:#f0ede8;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#c9a84c;display:inline-block;flex-shrink:0"></span>AI coaching cuts repeat question time by 80% for community founders</div>
+    <div style="font-size:13px;color:#f0ede8;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#c9a84c;display:inline-block;flex-shrink:0"></span>Automated onboarding reduces first-month churn by up to 40%</div>
+    <div style="font-size:13px;color:#f0ede8;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#c9a84c;display:inline-block;flex-shrink:0"></span>Telegram revival campaigns average 2&ndash;3% conversion to paid within 30 days</div>
+  </div>
+
+
+<!-- HOW WE WORK -->
+<div style="max-width:960px;margin:0 auto 56px;padding:0 2rem">
+  <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:16px;height:1px;background:#c9a84c"></span>How this works</div>
+  <div style="font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:700;margin-bottom:8px;color:#f0ede8">From this conversation to AI running in SPA.</div>
+  <div style="font-size:14px;color:rgba(240,237,232,0.55);margin-bottom:28px;max-width:560px;line-height:1.7">We do not hand you a document and disappear. Here is exactly what working with Altitude AI looks like in practice.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
+    <div style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 22px">
+      <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:#c9a84c;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Week 1&ndash;2</div>
+      <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#f0ede8;margin-bottom:8px">We agree the starting point</div>
+      <div style="font-size:13px;color:rgba(240,237,232,0.55);line-height:1.65;margin-bottom:10px">One call to align on the three things we build first. We scope the work, agree what success looks like, and get moving. No long discovery process.</div>
+      <div style="font-size:12px;color:#4caf7d;font-weight:500;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#4caf7d;display:inline-block"></span>You see a working build within 2 weeks</div>
+    </div>
+    <div style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 22px">
+      <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:#c9a84c;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Week 3&ndash;4</div>
+      <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#f0ede8;margin-bottom:8px">You see it live in your community</div>
+      <div style="font-size:13px;color:rgba(240,237,232,0.55);line-height:1.65;margin-bottom:10px">The first AI systems go live in SPA. Your members experience them. You get your time back. We watch the results and make adjustments.</div>
+      <div style="font-size:12px;color:#4caf7d;font-weight:500;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#4caf7d;display:inline-block"></span>AI running in your community within 30 days</div>
+    </div>
+    <div style="background:#131313;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 22px">
+      <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:#c9a84c;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Month 2 onwards</div>
+      <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#f0ede8;margin-bottom:8px">We build the rest of the roadmap</div>
+      <div style="font-size:13px;color:rgba(240,237,232,0.55);line-height:1.65;margin-bottom:10px">Once the foundations are working, we move through the roadmap together. You stay in control of priorities. We handle the building.</div>
+      <div style="font-size:12px;color:#4caf7d;font-weight:500;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#4caf7d;display:inline-block"></span>Iterative, measurable, no big bang</div>
+    </div>
   </div>
 </div>
 
@@ -249,9 +322,9 @@ footer{border-top:1px solid var(--border);padding:40px 2rem;text-align:center;ma
 </footer>
 
 <!-- STICKY BAR -->
-<div class="sticky-bar">
-  <div class="sticky-text"><strong>Ready to get started?</strong> <span class="hide-mobile">Book a call with Bolaji and we will agree the first steps.</span></div>
-  <a class="sticky-btn" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call &rarr;</a>
+<div class="sticky-bar" id="spa-sticky" style="display:none">
+  <div class="sticky-text"><strong>Ready to get started?</strong> <span class="hide-mobile">Message Bolaji directly on WhatsApp.</span></div>
+  <a class="sticky-btn" href="https://wa.me/447538497415?text=Hi%20Bolaji%2C%20I%20have%20reviewed%20the%20SPA%20AI%20roadmap%20and%20I%20am%20ready%20to%20talk%20next%20steps." target="_blank">Message Bolaji &rarr;</a>
 </div>
 
 <!-- MODAL -->
@@ -746,8 +819,8 @@ function openModal(sec,item){
       '<div class="m-sec"><div class="m-lbl">What we would use</div><div class="chips">'+toolsHtml+'</div></div>'+
     '</div>'+
     '<div class="m-cta-wrap">'+
-      '<div class="m-cta-text">Want to get this built for SPA? Book a call with Bolaji and we will get started.</div>'+
-      '<a class="m-cta-btn" href="https://calendly.com/hello-altitudeai/30min" target="_blank">Book a call with Bolaji &rarr;</a>'+
+      '<div class="m-cta-text">Want to get this built for SPA? Message Bolaji on WhatsApp and we will get started.</div>'+
+      '<a class="m-cta-btn" href="https://wa.me/447538497415?text=Hi%20Bolaji%2C%20I%20have%20reviewed%20the%20SPA%20AI%20roadmap%20and%20I%20am%20ready%20to%20talk%20next%20steps." target="_blank">Message Bolaji on WhatsApp &rarr;</a>'+
     '</div>';
   qs("#overlay").classList.add("open");
   qs("#modal").scrollTop=0;
@@ -787,5 +860,6 @@ buildStartCards();
 buildFilters();
 buildSections();
 </script>
+</div><!-- spa-main -->
 </body>
 </html>
