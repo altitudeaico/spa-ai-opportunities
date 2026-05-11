@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPA x Altitude AI — Technical Breakdown</title>
+<title>SPA x Altitude AI — Sprint Plan & Technical Breakdown</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,651 +23,531 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6}
 
-/* ── HERO (dark) ── */
-.hero-section{background:var(--bg-dark);color:#f0ede8;padding:0 0 56px}
-nav{background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+/* NAV */
+nav{background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-brand{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#f0ede8}
 .nav-brand span{color:#c9a84c}
 .nav-tag{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,237,232,0.35)}
 
+/* HERO */
+.hero-section{background:var(--bg-dark);color:#f0ede8;padding-bottom:56px}
 .hero-inner{max-width:1040px;margin:0 auto;padding:56px 2rem 0}
-.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';width:20px;height:1px;background:#c9a84c}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1px;background:#c9a84c}
 .hero h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:14px;color:#f0ede8}
 .hero h1 em{font-style:normal;color:#c9a84c}
 .hero-sub{font-size:15px;color:rgba(240,237,232,0.65);max-width:580px;line-height:1.75;margin-bottom:28px}
+.orient-box{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:var(--r);padding:18px 22px}
+.orient-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:#c9a84c;margin-bottom:10px}
+.orient-items{display:flex;flex-direction:column;gap:7px}
+.orient-item{font-size:13px;color:rgba(240,237,232,0.7);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.orient-item::before{content:'→';color:#c9a84c;flex-shrink:0;margin-top:1px}
 
-.orient-box{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:var(--r);padding:18px 22px;margin-bottom:0}
-.orient-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:#c9a84c;margin-bottom:8px}
-.orient-steps{display:flex;flex-wrap:wrap;gap:10px}
-.orient-step{font-size:12px;color:rgba(240,237,232,0.7);display:flex;align-items:center;gap:6px}
-.orient-step::before{content:'';width:20px;height:1px;background:rgba(201,168,76,0.4)}
+/* BODY */
+.body{max-width:1040px;margin:0 auto;padding:48px 2rem 80px}
 
-/* ── BODY (light) ── */
-.body-section{max-width:1040px;margin:0 auto;padding:48px 2rem 80px}
+/* SECTION HEADERS */
+.sec-header{margin-bottom:24px}
+.sec-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::after{content:'';flex:1;height:1px;background:var(--b1)}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:-0.02em;color:var(--t1);margin-bottom:6px}
+.sec-sub{font-size:14px;color:var(--t2);max-width:600px;line-height:1.7}
 
 /* COST EXPLAINER */
-.cost-explainer{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:28px;margin-bottom:48px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.ce-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--t1);margin-bottom:6px}
-.ce-sub{font-size:14px;color:var(--t2);margin-bottom:24px;max-width:600px;line-height:1.7}
-.ce-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-.ce-col{background:var(--s2);border-radius:8px;padding:18px 20px}
-.ce-col-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.ce-item{display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:var(--t2);align-items:flex-start;line-height:1.6}
-.ce-item:last-child{margin-bottom:0}
-.ce-dot{width:6px;height:6px;border-radius:50%;margin-top:6px;flex-shrink:0}
-.dot-g{background:var(--green)}.dot-a{background:var(--amber)}
-.analogy{background:var(--gd);border:1px solid var(--gb);border-radius:8px;padding:16px 20px;font-size:13px;color:var(--t2);line-height:1.75}
-.analogy strong{color:var(--gold)}
+.cost-box{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:28px;margin-bottom:48px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.cost-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.cost-col{background:var(--s2);border-radius:8px;padding:18px 20px}
+.cost-col-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .ctag{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
 .ctag-g{background:var(--grd);color:var(--green);border:1px solid var(--grb)}
 .ctag-a{background:var(--ad);color:var(--amber);border:1px solid var(--ab)}
+.cost-item{display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:var(--t2);line-height:1.6}
+.cost-item:last-child{margin-bottom:0}
+.cdot{width:6px;height:6px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.cdot-g{background:var(--green)}.cdot-a{background:var(--amber)}
+.analogy{background:var(--gd);border:1px solid var(--gb);border-radius:8px;padding:16px 20px;font-size:13px;color:var(--t2);line-height:1.75}
+.analogy strong{color:var(--gold)}
 
-/* SPRINT TABS */
-.sprint-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.stab{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;padding:8px 18px;border-radius:999px;border:1px solid var(--b1);background:var(--s1);color:var(--t3);cursor:pointer;transition:all 0.18s;white-space:nowrap}
-.stab:hover{border-color:var(--b2);color:var(--t2);background:var(--s2)}
-.stab.active{background:var(--bg-dark);border-color:var(--bg-dark);color:#f0ede8}
+/* SPRINT 1 HERO BLOCK */
+.sprint1-hero{background:var(--bg-dark);border-radius:var(--r);padding:32px;margin-bottom:16px;color:#f0ede8}
+.s1-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(45,138,94,0.15);border:1px solid rgba(45,138,94,0.3);border-radius:999px;padding:5px 14px;font-family:'DM Mono',monospace;font-size:11px;color:#4caf7d;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px}
+.s1-title{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,32px);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.1}
+.s1-title em{font-style:normal;color:#c9a84c}
+.s1-desc{font-size:14px;color:rgba(240,237,232,0.65);max-width:600px;line-height:1.75;margin-bottom:24px}
+.s1-items{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.s1-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:16px}
+.s1-item-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(201,168,76,0.7);margin-bottom:8px}
+.s1-item-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#f0ede8;margin-bottom:6px;line-height:1.3}
+.s1-item-desc{font-size:12px;color:rgba(240,237,232,0.55);line-height:1.6}
 
-/* SPRINT CONTENT */
-.sprint{display:none}
-.sprint.active{display:block}
+/* DETAIL TABS */
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;padding:8px 18px;border-radius:999px;border:1px solid var(--b1);background:var(--s1);color:var(--t3);cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.tab:hover{border-color:var(--b2);color:var(--t2)}
+.tab.active{background:var(--bg-dark);border-color:var(--bg-dark);color:#f0ede8}
+.tab-content{display:none}.tab-content.active{display:block}
 
-/* SPRINT HEADER */
-.sprint-header{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:24px 26px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.sh-top{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
-.sh-icon{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.sh-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
-.sh-title{font-family:'Syne',sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:var(--t1)}
-.sh-title em{font-style:normal}
-.sh-desc{font-size:14px;color:var(--t2);line-height:1.75;max-width:640px;margin-bottom:12px}
-.sh-meta{display:flex;gap:8px;flex-wrap:wrap}
-.smeta{font-size:11px;padding:4px 12px;border-radius:999px;font-family:'DM Mono',monospace}
-
-/* SECTION LABELS */
-.sec-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--t3);margin:24px 0 12px;display:flex;align-items:center;gap:8px}
-.sec-label::after{content:'';flex:1;height:1px;background:var(--b1)}
-
-/* GRIDS */
+/* BLOCKS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px}
 .gfull{margin-bottom:12px}
-
-/* BLOCKS */
 .block{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:18px 20px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
-.block-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--t3);margin-bottom:12px}
+.block-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
 .block p{font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:8px}
 .block p:last-child{margin-bottom:0}
 .block strong{color:var(--t1)}
+.slabel{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--t3);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.slabel::after{content:'';flex:1;height:1px;background:var(--b1)}
 
-/* RECOMMENDATION BOX */
+/* CALLOUT BOXES */
 .rec-box{background:var(--grd);border:1px solid var(--grb);border-radius:var(--r);padding:16px 20px;margin-bottom:12px}
-.rec-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px}
-
-/* WARNING BOX */
+.rec-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--green);margin-bottom:6px}
 .warn-box{background:var(--ad);border:1px solid var(--ab);border-radius:var(--r);padding:16px 20px;margin-bottom:12px}
-.warn-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--amber);margin-bottom:8px}
+.warn-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--amber);margin-bottom:6px}
 
 /* FLOW */
-.flow-wrap{overflow-x:auto;padding-bottom:8px;margin-bottom:4px}
-.flow{display:flex;gap:0;min-width:600px}
+.flow-wrap{overflow-x:auto;padding-bottom:6px;margin-bottom:4px}
+.flow{display:flex;gap:0;min-width:520px}
 .flow-step{flex:1;text-align:center;position:relative;padding:0 4px}
-.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:16px;color:var(--t3);font-size:13px;z-index:1}
-.flow-box{background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:10px 8px;margin-bottom:6px;font-size:12px;color:var(--t2);line-height:1.5}
-.flow-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:0.06em}
+.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:16px;color:var(--t3);font-size:12px;z-index:1}
+.flow-box{background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:9px 6px;margin-bottom:5px;font-size:11px;color:var(--t2);line-height:1.5}
+.flow-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--t3)}
 
 /* STACK TABLE */
-.stack-wrap{overflow-x:auto}
-.stack-table{width:100%;border-collapse:collapse;min-width:500px}
-.stack-table th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--t3);padding:8px 12px;text-align:left;border-bottom:2px solid var(--b1);background:var(--s2)}
-.stack-table td{font-size:13px;color:var(--t2);padding:10px 12px;border-bottom:1px solid var(--b1);vertical-align:top;line-height:1.5}
-.stack-table tr:last-child td{border-bottom:none}
-.stack-table .total-row{background:var(--s2)}
-.stack-table .total-row td{font-weight:600;color:var(--t1)}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;min-width:480px}
+.tbl th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--t3);padding:8px 12px;text-align:left;border-bottom:2px solid var(--b1);background:var(--s2)}
+.tbl td{font-size:13px;color:var(--t2);padding:10px 12px;border-bottom:1px solid var(--b1);vertical-align:top;line-height:1.5}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .tr-total{background:var(--s2)}
+.tbl .tr-total td{font-weight:600;color:var(--t1)}
 .who-a{color:var(--green);font-weight:500}
 .who-d{color:var(--amber);font-weight:500}
-.cost-val{font-family:'DM Mono',monospace;font-size:12px;white-space:nowrap}
-
-/* UX ITEMS */
-.ux-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--b1)}
-.ux-item:last-child{border-bottom:none}
-.ux-num{width:26px;height:26px;border-radius:50%;background:var(--s2);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--t2);flex-shrink:0;margin-top:2px}
-.ux-title{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:3px}
-.ux-desc{font-size:13px;color:var(--t2);line-height:1.65}
+.cv{font-family:'DM Mono',monospace;font-size:12px;white-space:nowrap}
 
 /* RISKS */
-.risk{display:flex;gap:10px;padding:10px 14px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--t2);line-height:1.65;align-items:flex-start}
+.risk{display:flex;gap:10px;padding:10px 14px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--t2);line-height:1.65}
 .risk:last-child{margin-bottom:0}
-.risk-icon{flex-shrink:0;font-size:14px;margin-top:1px}
-.risk-high{background:var(--redd);border:1px solid var(--redb)}
-.risk-med{background:var(--ad);border:1px solid var(--ab)}
-.risk-low{background:var(--grd);border:1px solid var(--grb)}
+.risk-icon{flex-shrink:0;font-size:13px;margin-top:1px}
 .risk strong{color:var(--t1)}
+.r-high{background:var(--redd);border:1px solid var(--redb)}
+.r-med{background:var(--ad);border:1px solid var(--ab)}
+.r-low{background:var(--grd);border:1px solid var(--grb)}
 
-/* COMBINED COST TABLE */
-.combined-wrap{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:24px 28px;margin-top:48px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+/* ROADMAP */
+.roadmap{margin-top:56px}
+.rm-item{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:22px 24px;margin-bottom:12px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.rm-phase{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--t3);margin-bottom:6px}
+.rm-timeline{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--t1);line-height:1.1;margin-bottom:4px}
+.rm-status{font-size:11px;padding:3px 10px;border-radius:999px;display:inline-block;margin-top:6px}
+.rm-st-now{background:var(--grd);color:var(--green);border:1px solid var(--grb)}
+.rm-st-next{background:var(--ad);color:var(--amber);border:1px solid var(--ab)}
+.rm-st-later{background:var(--bd);color:var(--blue);border:1px solid var(--bb)}
+.rm-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--t1);margin-bottom:6px}
+.rm-desc{font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:10px}
+.rm-items{display:flex;flex-wrap:wrap;gap:6px}
+.rm-tag{font-size:11px;padding:3px 10px;border-radius:999px;background:var(--s2);border:1px solid var(--b1);color:var(--t2)}
+.rm-price{font-family:'DM Mono',monospace;font-size:13px;color:var(--t3);margin-top:8px}
+
+/* COMBINED COST */
+.combined{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:28px;margin-top:48px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
 .combined-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--t1);margin-bottom:6px}
-.combined-sub{font-size:14px;color:var(--t2);margin-bottom:20px;line-height:1.7}
+.combined-sub{font-size:14px;color:var(--t2);margin-bottom:20px;line-height:1.7;max-width:600px}
 
-footer{background:var(--bg-dark);padding:32px 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer{background:var(--bg-dark);padding:32px 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:56px}
 .f-brand{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#c9a84c}
-.f-note{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,237,232,0.35)}
+.f-note{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,237,232,0.3)}
 
 @media(max-width:768px){
-  .ce-cols,.g2,.g3{grid-template-columns:1fr}
-  .hero-inner,.body-section{padding-left:1rem;padding-right:1rem}
+  .cost-cols,.g2,.g3,.s1-items,.rm-item{grid-template-columns:1fr}
+  .hero-inner,.body{padding-left:1rem;padding-right:1rem}
   nav{padding:0 1rem}
-  .sprint-nav{gap:6px}
-  .stab{font-size:11px;padding:6px 12px}
+  .tab{font-size:11px;padding:6px 12px}
 }
 </style>
 </head>
 <body>
 
+<nav>
+  <span class="nav-brand">Altitude <span>AI</span> Consulting</span>
+  <span class="nav-tag">Sprint plan &mdash; SPA</span>
+</nav>
+
 <!-- DARK HERO -->
 <div class="hero-section">
-  <nav>
-    <span class="nav-brand">Altitude <span>AI</span> Consulting</span>
-    <span class="nav-tag">Technical breakdown &mdash; SPA</span>
-  </nav>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Stock Pickers Academy &times; Altitude AI</div>
-    <h1>What we are building,<br>how it works, and<br><em>what it costs to run.</em></h1>
-    <p class="hero-sub">This document explains the technical side of each sprint in plain English — no jargon. It covers what we build, what infrastructure it runs on, who pays for what, and what the ongoing monthly costs look like once it is live.</p>
+    <div class="eyebrow">Stock Pickers Academy &times; Altitude AI</div>
+    <h1>What we are building,<br>when, and <em>what it costs to run.</em></h1>
+    <p class="hero-sub">This document covers the first 30-day sprint in full detail — what goes into each piece, how it works, and what the ongoing monthly costs look like. It also shows the roadmap for what comes next.</p>
     <div class="orient-box">
       <div class="orient-title">How to read this document</div>
-      <div class="orient-steps">
-        <span class="orient-step">Start with the cost explainer below — it answers the most important question first</span>
-        <span class="orient-step">Then browse each sprint using the tabs</span>
-        <span class="orient-step">Each sprint ends with a cost table showing exactly what you will pay monthly</span>
-        <span class="orient-step">The final section shows combined costs across all sprints</span>
+      <div class="orient-items">
+        <div class="orient-item">Start with the cost explainer — it answers the most important question first</div>
+        <div class="orient-item">Sprint 1 is what we build in the first 30 days — three things, delivered together</div>
+        <div class="orient-item">Use the tabs to go deeper on each of the three components</div>
+        <div class="orient-item">The roadmap at the bottom shows what Sprints 2 and 3 look like and when they happen</div>
+        <div class="orient-item">The final section shows the combined monthly costs once everything is live</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- LIGHT BODY -->
-<div class="body-section">
+<div class="body">
 
   <!-- COST EXPLAINER -->
-  <div class="cost-explainer">
-    <div class="ce-title">The most important thing to understand — two completely separate costs</div>
-    <div class="ce-sub">Every project has two types of cost. Understanding the difference upfront removes all confusion about money for the rest of the project.</div>
-    <div class="ce-cols">
-      <div class="ce-col">
-        <div class="ce-col-title"><span class="ctag ctag-g">Build fee</span> &mdash; paid to Altitude AI, once</div>
-        <div class="ce-item"><div class="ce-dot dot-g"></div><div>This is what you pay Altitude AI for our time, expertise, and delivery. It covers designing the system, building it, testing it, and handing it over to you working and documented.</div></div>
-        <div class="ce-item"><div class="ce-dot dot-g"></div><div>You pay this once per sprint. It does not come back.</div></div>
-        <div class="ce-item"><div class="ce-dot dot-g"></div><div>Our own tools — the software we use to build — are our cost. We do not pass those through to you.</div></div>
+  <div class="cost-box">
+    <div class="sec-header">
+      <div class="sec-eyebrow">Before anything else</div>
+      <div class="sec-title">Two completely separate costs — important to understand from day one</div>
+      <div class="sec-sub">Every project has two types of cost. Getting clear on the difference upfront removes all confusion about money.</div>
+    </div>
+    <div class="cost-cols">
+      <div class="cost-col">
+        <div class="cost-col-title"><span class="ctag ctag-g">Build fee</span> &mdash; paid to Altitude AI, once</div>
+        <div class="cost-item"><div class="cdot cdot-g"></div><div>What you pay Altitude AI for our time, expertise, and delivery. Covers designing the system, building it, testing it, and handing it to you working and documented.</div></div>
+        <div class="cost-item"><div class="cdot cdot-g"></div><div>Paid once per sprint. Does not come back.</div></div>
+        <div class="cost-item"><div class="cdot cdot-g"></div><div>Our own tools — the software we use to build — are our cost. We do not pass those through to you.</div></div>
       </div>
-      <div class="ce-col">
-        <div class="ce-col-title"><span class="ctag ctag-a">Infrastructure costs</span> &mdash; paid by you, monthly</div>
-        <div class="ce-item"><div class="ce-dot dot-a"></div><div>Every piece of software needs somewhere to live and services to run on. These are billed directly to you by the companies providing them — not through us. We have no markup on these.</div></div>
-        <div class="ce-item"><div class="ce-dot dot-a"></div><div>Think of them as utility bills. You own the system. You pay the utilities to keep it running.</div></div>
-        <div class="ce-item"><div class="ce-dot dot-a"></div><div>These costs are predictable and we will show you exactly what each one is before we spend a penny building anything.</div></div>
+      <div class="cost-col">
+        <div class="cost-col-title"><span class="ctag ctag-a">Infrastructure costs</span> &mdash; paid by you, monthly</div>
+        <div class="cost-item"><div class="cdot cdot-a"></div><div>Every piece of software needs somewhere to live and services to run on. These go directly to the companies providing them — not through us. No markup.</div></div>
+        <div class="cost-item"><div class="cdot cdot-a"></div><div>Think of them as utility bills. You own the system. You pay the utilities to keep it running.</div></div>
+        <div class="cost-item"><div class="cdot cdot-a"></div><div>Fully transparent — we will show you exactly what each one costs before we write a single line of code.</div></div>
       </div>
     </div>
-    <div class="analogy">
-      <strong>The clearest way to think about it.</strong> You hire a builder to fit a new kitchen. You pay the builder for their time and skill — that is the build fee. But your kitchen also needs gas, electricity, and water connected to it. Those are your ongoing bills — they go directly to the utility companies, not through the builder. You would pay them regardless of which builder you used. That is exactly the relationship here. Altitude AI builds the system. The hosting, AI usage, and platform subscriptions are your utility bills — paid directly to the providers, fully transparent, no markup from us.
+    <div class="analogy"><strong>The simplest way to think about it.</strong> You hire a builder to fit a new kitchen. You pay the builder for their time and skill — that is the build fee. But the kitchen also needs gas, electricity, and water. Those are your ongoing utility bills — paid directly to the suppliers, not through the builder. You would pay them regardless of which builder you used. That is exactly this. Altitude AI builds the system. Hosting, AI usage, and platform subscriptions are your utility bills — paid directly to the providers, fully transparent, no markup from us.</div>
+  </div>
+
+  <!-- SPRINT 1 -->
+  <div class="sec-header">
+    <div class="sec-eyebrow">The first 30 days</div>
+    <div class="sec-title">Sprint 1 — three things, delivered together</div>
+    <div class="sec-sub">These three components are built as one connected system in the first 30 days. They share infrastructure, they complement each other, and together they deliver immediate, visible impact on Deb's time, his member experience, and his revenue.</div>
+  </div>
+
+  <div class="sprint1-hero">
+    <div class="s1-badge">&#9679; Sprint 1 &mdash; 30 days &mdash; live in your community by end of month</div>
+    <div class="s1-title">The AI Coach &plus; The Joining Flow<br><em>&plus; The Telegram Revival</em></div>
+    <p class="s1-desc">One build. Three outcomes. Deb stops answering the same questions every day. New members get an instant, guided experience. 4,000 dormant Telegram contacts start converting to paid members.</p>
+    <div class="s1-items">
+      <div class="s1-item">
+        <div class="s1-item-num">Component 01</div>
+        <div class="s1-item-name">AI Coach in WhatsApp</div>
+        <div class="s1-item-desc">A version of Deb trained on the Spartan strategy, available 24/7 to answer member questions privately in his voice.</div>
+      </div>
+      <div class="s1-item">
+        <div class="s1-item-num">Component 02</div>
+        <div class="s1-item-name">Joining Flow Automation</div>
+        <div class="s1-item-desc">From payment to active member automatically — instant access, personal welcome, and a 7-day guided onboarding journey.</div>
+      </div>
+      <div class="s1-item">
+        <div class="s1-item-num">Component 03</div>
+        <div class="s1-item-name">Telegram Revival</div>
+        <div class="s1-item-desc">An AI agent brings the dormant 4,000-person group back to life and funnels engaged contacts toward the paid group.</div>
+      </div>
     </div>
   </div>
 
-  <!-- SPRINT TABS -->
-  <div class="sprint-nav">
-    <button class="stab active" onclick="showSprint('s1',this)">Sprint 1 &mdash; AI Coach</button>
-    <button class="stab" onclick="showSprint('s2',this)">Sprint 2 &mdash; Joining Flow</button>
-    <button class="stab" onclick="showSprint('s3',this)">Sprint 3 &mdash; Telegram Revival</button>
-    <button class="stab" onclick="showSprint('s4',this)">Sprint 4 &mdash; Watch List App</button>
-    <button class="stab" onclick="showSprint('s5',this)">Sprint 5 &mdash; AI Avatar</button>
+  <!-- DETAIL TABS -->
+  <div class="tab-nav">
+    <button class="tab active" onclick="showTab('t1',this)">Component 01 — AI Coach</button>
+    <button class="tab" onclick="showTab('t2',this)">Component 02 — Joining Flow</button>
+    <button class="tab" onclick="showTab('t3',this)">Component 03 — Telegram Revival</button>
   </div>
 
-  <!-- ── SPRINT 1 ── -->
-  <div class="sprint active" id="s1">
-    <div class="sprint-header">
-      <div class="sh-top">
-        <div class="sh-icon" style="background:#f0ebff">&#129504;</div>
-        <div>
-          <div class="sh-num">Sprint 01</div>
-          <div class="sh-title">The AI Coach — <em style="color:var(--purple)">a version of Deb, available 24/7</em></div>
-        </div>
-      </div>
-      <p class="sh-desc">Right now members message Deb directly with questions about the Spartan strategy, individual stocks, and how to use the watch list. He answers the same questions dozens of times a day. This sprint builds an AI version of Deb — trained on everything he knows — that answers those questions instantly, at any hour, in his voice. Members feel like they are talking to Deb. Deb gets his time back.</p>
-      <div class="sh-meta">
-        <span class="smeta" style="background:#f0ebff;color:var(--purple);border:1px solid var(--pb)">30-day sprint</span>
-        <span class="smeta" style="background:var(--ad);color:var(--amber);border:1px solid var(--ab)">Medium complexity</span>
-      </div>
-    </div>
-
-    <div class="sec-label">Where does the AI coach live — our recommendation</div>
+  <!-- TAB 1: AI COACH -->
+  <div class="tab-content active" id="t1">
     <div class="rec-box">
-      <div class="rec-title">&#9989; We recommend: WhatsApp DMs</div>
-      <p style="font-size:13px;color:var(--t2);line-height:1.7">Members message a dedicated WhatsApp number and the AI responds. No new app for members to download, no new login to remember. It lives exactly where they already spend their time. This is the right choice for Sprint 1 because it is the fastest to adopt and the fastest to build. A web-based chat interface is a better long-term home and becomes part of the watch list app in Sprint 4 — the AI brain built here plugs straight in.</p>
+      <div class="rec-title">&#9989; Where it lives — WhatsApp DMs</div>
+      <p style="font-size:13px;color:var(--t2);line-height:1.7">Members message a dedicated WhatsApp number. The AI responds in Deb's voice within seconds. No new app for members to download, no new login. It lives where they already spend their time. A web-based version becomes the long-term home as part of Sprint 2 — the AI brain built here plugs straight in.</p>
     </div>
-
     <div class="warn-box">
-      <div class="warn-title">&#9888; One thing to be aware of on WhatsApp group auto-approval</div>
-      <p style="font-size:13px;color:var(--t2);line-height:1.7">We have described automating the process of approving new members into the WhatsApp group when they pay. To be precise about how this works — WhatsApp does not have a simple on/off switch for this. What we build is a system where, when payment is confirmed, a message is automatically sent to the new member with a direct invite link that gets them straight in. This achieves the same outcome — instant access on payment — through a reliable, supported method rather than a workaround that could break. The member experience is seamless. The mechanics just work slightly differently to how it might sound on paper.</p>
+      <div class="warn-title">&#9888; How WhatsApp group access actually works — being precise</div>
+      <p style="font-size:13px;color:var(--t2);line-height:1.7">WhatsApp does not have a button that lets a system automatically approve pending group join requests. What we build is this: the moment payment is confirmed, the system automatically sends the new member a direct group invite link via WhatsApp. They tap it and they are in. Same outcome — instant access on payment — through a method that is supported and reliable. The member experience is seamless.</p>
     </div>
-
-    <div class="sec-label">What we actually build</div>
+    <div class="slabel">What we build</div>
     <div class="g2">
       <div class="block">
         <div class="block-title">The knowledge base — the AI's brain</div>
-        <p>We take everything Deb has ever created — podcast transcripts, course material, past group messages, strategy documents, watch list logic and commentary — and load it into a system the AI can search through instantly when a member asks a question.</p>
-        <p>When someone asks "should I be buying this stock right now?" the AI searches everything Deb has ever said about that kind of situation and generates a response that reflects Deb's thinking. This is not a generic chatbot. It is specifically trained on Deb's knowledge and way of thinking.</p>
-        <p><strong>Plain English for what this means technically:</strong> think of it like giving the AI a searchable library of everything Deb knows. When a question comes in, the AI finds the most relevant pages of that library and uses them to write the answer.</p>
+        <p>We take everything Deb has ever created — podcast transcripts, course material, past group messages, strategy documents, watch list commentary — and load it into a system the AI can instantly search when a member asks a question.</p>
+        <p>When someone asks "should I be buying this stock right now?" the AI searches everything Deb has ever said about that kind of situation and writes a response that reflects Deb's thinking. Not a generic chatbot — specifically trained on Deb's knowledge.</p>
+        <p><strong>Plain English:</strong> think of it as giving the AI a searchable library of everything Deb knows. When a question comes in, the AI finds the most relevant parts of that library and uses them to write the answer.</p>
       </div>
       <div class="block">
         <div class="block-title">Voice and style training</div>
-        <p>Beyond the content, we train the AI to communicate the way Deb communicates. His directness, his level of detail, how he handles uncertainty, what he will and will not advise on. The responses need to sound like Deb wrote them — not like a customer service bot.</p>
-        <p>We also build strict guardrails. The AI will not give specific personal investment advice or tell someone to buy a specific amount of a stock. Anything that crosses into regulated financial advice gets redirected to Deb personally, with a summary of what the member asked so he has full context before he replies.</p>
+        <p>Beyond the content, we train the AI to communicate the way Deb communicates. His directness, his level of detail, how he handles uncertainty, what he will and will not advise on. Responses need to sound like Deb wrote them.</p>
+        <p>We also build strict guardrails. The AI will not give specific personal investment advice. Anything that crosses into regulated financial advice is redirected to Deb personally — with a full summary of what the member asked so he has context before he replies.</p>
       </div>
     </div>
     <div class="g3">
       <div class="block">
         <div class="block-title">WhatsApp connection</div>
-        <p>A dedicated WhatsApp number is set up through an official WhatsApp Business provider. Deb announces it to the community — "for any questions about the strategy, message this number." Members message it, the AI responds within seconds.</p>
-        <p><strong>Important note:</strong> setting this up requires applying to Meta (the company that owns WhatsApp) for business API access. This takes approximately 1-2 weeks to approve. We apply on day one of the sprint so it does not delay delivery.</p>
+        <p>A dedicated WhatsApp number is set up through an official WhatsApp Business provider. Deb announces it to the community. Members message it, the AI responds within seconds.</p>
+        <p><strong>Note:</strong> setting this up requires applying to Meta for business API access. This takes approximately 1-2 weeks. We apply on day one of the sprint so it does not delay delivery.</p>
       </div>
       <div class="block">
         <div class="block-title">Escalation to Deb</div>
-        <p>When the AI detects a question it should not answer — personal financial situations, major investment decisions, or anything requiring Deb's specific judgment — it sends Deb a notification with the full conversation and a suggested response. Deb replies and his answer goes straight back to the member.</p>
+        <p>When the AI detects a question it should not answer — personal financial situations, major investment decisions — it sends Deb a notification with the full conversation and a suggested response. Deb replies and it goes straight back to the member.</p>
       </div>
       <div class="block">
         <div class="block-title">Usage monitoring</div>
-        <p>A simple dashboard showing how many questions members are asking, which topics come up most, and what the AI is costing per month in real terms. This gives Deb visibility on what his members actually want to know and whether the AI is handling it well.</p>
+        <p>A simple dashboard showing how many questions members are asking, which topics come up most, and what the AI is costing per month. Gives Deb visibility on what his members want to know and whether the AI is handling it well.</p>
       </div>
     </div>
-
-    <div class="sec-label">The member experience, step by step</div>
+    <div class="slabel">What Deb pays monthly</div>
     <div class="block gfull">
-      <div class="ux-item"><div class="ux-num">1</div><div><div class="ux-title">Deb announces the AI coach number in the group</div><div class="ux-desc">"For any questions about the Spartan strategy, individual stocks, or how to use the watch list — message the SPA AI Coach directly at this number. It is available 24/7 and is trained on everything I know about investing."</div></div></div>
-      <div class="ux-item"><div class="ux-num">2</div><div><div class="ux-title">Member messages the number with their question</div><div class="ux-desc">They are already on WhatsApp. It feels like messaging any other contact. No friction, no new account, no app download.</div></div></div>
-      <div class="ux-item"><div class="ux-num">3</div><div><div class="ux-title">The AI responds within seconds in Deb's voice</div><div class="ux-desc">The answer is direct, knowledgeable, and sounds like Deb wrote it. Members who were nervous to ask in the public group now have a private, always-available option.</div></div></div>
-      <div class="ux-item"><div class="ux-num">4</div><div><div class="ux-title">The group stays clean and focused</div><div class="ux-desc">Individual questions move to private DMs. The main group becomes a place for watch list alerts, major announcements, and community wins — not a support queue.</div></div></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>What it is</th><th>Plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
+        <tbody>
+          <tr><td>OpenAI (AI that generates responses)</td><td>Powers every response the AI sends. Cost scales with how many questions members ask.</td><td class="who-d">Deb pays OpenAI directly</td><td class="cv">~£50&ndash;150/month</td></tr>
+          <tr><td>Knowledge base storage (Supabase)</td><td>Where all of Deb's content is stored so the AI can search it instantly.</td><td class="who-d">Deb pays Supabase directly</td><td class="cv">~£20&ndash;50/month</td></tr>
+          <tr><td>WhatsApp Business provider (360dialog)</td><td>Connects the AI to WhatsApp. Required because WhatsApp does not allow automation through its regular app.</td><td class="who-d">Deb pays 360dialog directly</td><td class="cv">~£50&ndash;120/month</td></tr>
+          <tr><td>Hosting (Vercel/Railway)</td><td>The server that runs the AI pipeline 24/7. Like paying rent for the system to operate.</td><td class="who-d">Deb pays directly</td><td class="cv">~£15&ndash;35/month</td></tr>
+          <tr class="tr-total"><td colspan="2">Component 01 monthly total — at ~300 active members</td><td class="who-d">Deb pays</td><td class="cv" style="color:var(--amber)">~£135&ndash;355/month</td></tr>
+        </tbody>
+      </table></div>
     </div>
-
-    <div class="sec-label">What Deb pays monthly to run this</div>
-    <div class="block gfull">
-      <div class="stack-wrap">
-        <table class="stack-table">
-          <thead><tr><th>What it is</th><th>What it does in plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
-          <tbody>
-            <tr><td>OpenAI (the AI that generates responses)</td><td>Every time a member asks a question and the AI answers, this is what powers the response. Cost scales with how many questions members ask.</td><td class="who-d">Deb pays directly to OpenAI</td><td class="cost-val">~£50&ndash;150/month</td></tr>
-            <tr><td>Knowledge base storage (Supabase)</td><td>Where all of Deb's content is stored so the AI can search it. Think of it as a filing system that the AI can search through instantly.</td><td class="who-d">Deb pays directly to Supabase</td><td class="cost-val">~£20&ndash;50/month</td></tr>
-            <tr><td>WhatsApp Business provider (360dialog)</td><td>The service that connects the AI to WhatsApp. Required because WhatsApp does not allow automation through its regular app.</td><td class="who-d">Deb pays directly to 360dialog</td><td class="cost-val">~£50&ndash;120/month</td></tr>
-            <tr><td>Hosting (where the system lives)</td><td>The server that runs the AI pipeline 24/7. Like paying rent for the system to operate.</td><td class="who-d">Deb pays directly to Vercel/Railway</td><td class="cost-val">~£15&ndash;35/month</td></tr>
-            <tr class="total-row"><td colspan="2">Estimated monthly total — Sprint 1 only, at current member count (~300 active)</td><td class="who-d">Deb pays</td><td class="cost-val" style="color:var(--amber)">~£135&ndash;355/month</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="margin-top:12px;font-size:12px;color:var(--t3);line-height:1.6">These costs scale with usage. More members asking more questions means higher AI costs. We will give you a specific estimate based on your exact member count and expected usage volume before we start building.</div>
-    </div>
-
-    <div class="sec-label">Risks — and how we handle them</div>
+    <div class="slabel">Risks and how we handle them</div>
     <div class="gfull">
-      <div class="risk risk-high"><div class="risk-icon">&#9888;</div><div><strong>WhatsApp approval takes 1-2 weeks.</strong> We cannot speed up Meta's review process. We apply on day one. If it is delayed, we build and test the full AI system in parallel using a web interface, so when approval comes through everything is ready to switch on immediately. The 30-day timeline is protected.</div></div>
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>The AI is only as good as the content fed into it.</strong> If the source material is patchy or inconsistent, the responses will reflect that. We spend the first week of the sprint focused on collecting, cleaning, and organising Deb's content before we train anything. Quality in, quality out.</div></div>
-      <div class="risk risk-low"><div class="risk-icon">&#9888;</div><div><strong>Regulatory.</strong> The AI cannot give regulated financial advice. This is built into the system from day one — any response that edges toward specific personal investment recommendations is blocked and redirected to Deb. Standard disclaimers are appended to every response automatically.</div></div>
+      <div class="risk r-high"><div class="risk-icon">&#9888;</div><div><strong>WhatsApp approval takes 1-2 weeks.</strong> We apply on day one. If delayed, we build and test the full AI system using a web interface in parallel — when approval comes through, everything is ready to switch on. The 30-day timeline is protected.</div></div>
+      <div class="risk r-med"><div class="risk-icon">&#9888;</div><div><strong>The AI is only as good as the content fed into it.</strong> Week one of the sprint is dedicated to collecting, cleaning, and organising Deb's content before we train anything.</div></div>
+      <div class="risk r-low"><div class="risk-icon">&#9888;</div><div><strong>Regulatory.</strong> Any response that edges toward specific personal investment advice is blocked and redirected to Deb. Standard disclaimers are appended automatically to every response.</div></div>
     </div>
   </div>
 
-  <!-- ── SPRINT 2 ── -->
-  <div class="sprint" id="s2">
-    <div class="sprint-header">
-      <div class="sh-top">
-        <div class="sh-icon" style="background:#eaf4ff">&#128172;</div>
-        <div>
-          <div class="sh-num">Sprint 02</div>
-          <div class="sh-title">The Joining Flow — <em style="color:var(--blue)">from payment to active member, automatically</em></div>
-        </div>
-      </div>
-      <p class="sh-desc">Right now there is a gap between someone paying to join SPA and becoming a fully active member. Deb has to manually approve WhatsApp requests. New members get no guided introduction. People join, feel overwhelmed, and quietly cancel. This sprint closes every gap in that journey — automatically, for every member, every time, without Deb doing anything.</p>
-      <div class="sh-meta">
-        <span class="smeta" style="background:#eaf4ff;color:var(--blue);border:1px solid var(--bb)">30-day sprint</span>
-        <span class="smeta" style="background:var(--grd);color:var(--green);border:1px solid var(--grb)">Low complexity</span>
-      </div>
-    </div>
-
-    <div class="sec-label">What happens at each step of the journey</div>
+  <!-- TAB 2: JOINING FLOW -->
+  <div class="tab-content" id="t2">
+    <div class="slabel">What happens at each step</div>
     <div class="block gfull">
       <div class="flow-wrap"><div class="flow">
         <div class="flow-step"><div class="flow-box">Member pays on WOP</div><div class="flow-label">Payment</div></div>
         <div class="flow-step"><div class="flow-box">System detects payment instantly</div><div class="flow-label">Detection</div></div>
-        <div class="flow-step"><div class="flow-box">WhatsApp invite link sent automatically</div><div class="flow-label">Access</div></div>
-        <div class="flow-step"><div class="flow-box">Welcome message fires in Deb's voice</div><div class="flow-label">Welcome</div></div>
+        <div class="flow-step"><div class="flow-box">Invite link sent to member automatically</div><div class="flow-label">Access</div></div>
+        <div class="flow-step"><div class="flow-box">Welcome message in Deb's voice</div><div class="flow-label">Welcome</div></div>
         <div class="flow-step"><div class="flow-box">7-day guided journey begins</div><div class="flow-label">Onboarding</div></div>
         <div class="flow-step"><div class="flow-box">Confident, active member</div><div class="flow-label">Active</div></div>
       </div></div>
     </div>
-
-    <div class="sec-label">What we build</div>
+    <div class="slabel">What we build</div>
     <div class="g2">
       <div class="block">
         <div class="block-title">Payment to access — automated</div>
-        <p>When someone pays on WOP, that platform sends an instant signal to our system with the new member's details. Our system immediately sends them a WhatsApp message containing a direct group invite link. They tap it, they are in. No waiting, no manual approval from Deb.</p>
-        <p><strong>Plain English for the technical bit:</strong> WOP has a feature called a webhook — it is basically a notification that fires automatically when something happens (like a payment). We catch that notification and trigger the WhatsApp message. The whole thing takes about 10-15 seconds from payment to group access.</p>
+        <p>When someone pays on WOP, that platform sends an instant signal to our system with the new member's details. Our system immediately sends them a WhatsApp message containing a direct group invite link. They tap it, they are in. No waiting, no manual approval.</p>
+        <p><strong>Plain English for the technical part:</strong> WOP has a feature that fires a notification automatically when a payment happens. We catch that notification and trigger the WhatsApp message. The whole thing takes about 10-15 seconds from payment to group access.</p>
       </div>
       <div class="block">
-        <div class="block-title">Tiered welcome messages</div>
-        <p>A £99 standard member gets a warm, clear welcome — what SPA is, what to do first, where to find the watch list. A £300 Spartan member gets a more personal, exclusive-feeling message that reflects their premium status.</p>
-        <p>All messages are written in Deb's voice during the sprint. He reads and approves every one before they go live. Nothing sends without his sign-off.</p>
+        <div class="block-title">The 7-day onboarding journey</div>
+        <p>A sequence of messages that fires automatically based on when someone joined. Day 1 is always their first day regardless of when they paid.</p>
+        <p><strong>Day 1</strong> — Welcome, what SPA is, what to do first<br><strong>Day 2</strong> — The Spartan strategy explained simply<br><strong>Day 3</strong> — How to read the watch list<br><strong>Day 4</strong> — Your first trade walkthrough<br><strong>Day 5</strong> — How to use the discussion room<br><strong>Day 6</strong> — Message the AI coach with any questions<br><strong>Day 7</strong> — Check-in and what comes next</p>
+        <p>All messages written in Deb's voice and approved by him before go-live.</p>
       </div>
     </div>
     <div class="g2">
       <div class="block">
-        <div class="block-title">The 7-day onboarding journey</div>
-        <p>A sequence of messages that fires automatically based on when someone joined — not a fixed calendar. Day 1 is always their first day regardless of when they paid.</p>
-        <p><strong>Day 1</strong> — Welcome, what SPA is, what to do first<br><strong>Day 2</strong> — The Spartan strategy explained simply<br><strong>Day 3</strong> — How to read the watch list<br><strong>Day 4</strong> — Your first trade walkthrough<br><strong>Day 5</strong> — How to use the discussion room<br><strong>Day 6</strong> — Message the AI coach with any questions<br><strong>Day 7</strong> — Check-in and what comes next</p>
+        <div class="block-title">Tiered welcome messages</div>
+        <p>A £99 standard member gets a warm, clear welcome — what SPA is, what to do first. A £300 Spartan gets a more personal, exclusive-feeling message that reflects their premium status.</p>
       </div>
       <div class="block">
         <div class="block-title">Cancellation handling</div>
-        <p>When a member cancels or a payment fails, the system handles it automatically. Failed payments get a polite reminder and a 48-hour grace period before anything happens — recovering members who simply forgot to update their card. Genuine cancellations get one final message offering a pause or alternative before access is removed.</p>
-        <p>When access is removed, it happens across WhatsApp and WOP simultaneously. Nothing leaks through.</p>
+        <p>When a member cancels or a payment fails, the system handles it automatically. Failed payments get a polite reminder and a 48-hour grace period. Genuine cancellations get one final message offering a pause or alternative before access is removed across WhatsApp and WOP simultaneously.</p>
       </div>
     </div>
-
-    <div class="sec-label">What Deb pays monthly to run this</div>
+    <div class="slabel">What Deb pays monthly</div>
     <div class="block gfull">
-      <div class="stack-wrap">
-        <table class="stack-table">
-          <thead><tr><th>What it is</th><th>What it does in plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
-          <tbody>
-            <tr><td>Automation platform (Make)</td><td>The tool that connects WOP to WhatsApp and manages the sequence of messages. Think of it as the engine that runs all the joining logic automatically.</td><td class="who-d">Deb pays directly to Make</td><td class="cost-val">~£20&ndash;45/month</td></tr>
-            <tr><td>WhatsApp Business provider</td><td>Shared with Sprint 1 — no additional cost if Sprint 1 is already running.</td><td class="who-d">Deb pays — shared cost</td><td class="cost-val">Shared with S1</td></tr>
-            <tr class="total-row"><td colspan="2">Estimated monthly total — Sprint 2 only</td><td class="who-d">Deb pays</td><td class="cost-val" style="color:var(--amber)">~£20&ndash;45/month additional</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>What it is</th><th>Plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
+        <tbody>
+          <tr><td>Automation platform (Make)</td><td>Connects WOP to WhatsApp and manages the sequence of messages. The engine that runs all the joining logic.</td><td class="who-d">Deb pays Make directly</td><td class="cv">~£20&ndash;45/month</td></tr>
+          <tr><td>WhatsApp Business provider</td><td>Shared with Component 01 — no additional cost if the AI coach is already running.</td><td class="who-d">Shared cost</td><td class="cv">Shared with C01</td></tr>
+          <tr class="tr-total"><td colspan="2">Component 02 additional monthly cost</td><td class="who-d">Deb pays</td><td class="cv" style="color:var(--amber)">~£20&ndash;45/month</td></tr>
+        </tbody>
+      </table></div>
     </div>
-
-    <div class="sec-label">Risks — and how we handle them</div>
+    <div class="slabel">Risks and how we handle them</div>
     <div class="gfull">
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>Phone number matching.</strong> The system matches WOP payment records to WhatsApp numbers. If a member pays using a different phone number to the one on their WhatsApp, the automatic invite will not reach them. We build a simple fallback — if no match is found, the system sends them a message asking them to confirm their WhatsApp number. This covers the edge case without breaking the flow.</div></div>
-      <div class="risk risk-low"><div class="risk-icon">&#9888;</div><div><strong>WhatsApp messaging rules.</strong> WhatsApp has rules about sending automated messages to people. We structure the entire joining flow to work within these rules from day one — using approved message templates where required.</div></div>
+      <div class="risk r-med"><div class="risk-icon">&#9888;</div><div><strong>Phone number matching.</strong> If a member pays using a different phone number to their WhatsApp, the automatic invite will not reach them. We build a fallback — if no match is found, the system sends a message asking them to confirm their WhatsApp number. Edge case covered.</div></div>
+      <div class="risk r-low"><div class="risk-icon">&#9888;</div><div><strong>WhatsApp messaging rules.</strong> WhatsApp has rules about automated messages. The entire joining flow is structured to work within these rules from day one using approved message templates.</div></div>
     </div>
   </div>
 
-  <!-- ── SPRINT 3 ── -->
-  <div class="sprint" id="s3">
-    <div class="sprint-header">
-      <div class="sh-top">
-        <div class="sh-icon" style="background:#eafaf2">&#128225;</div>
-        <div>
-          <div class="sh-num">Sprint 03</div>
-          <div class="sh-title">The Telegram Revival — <em style="color:var(--green)">turning 4,000 dormant contacts into paying members</em></div>
-        </div>
-      </div>
-      <p class="sh-desc">Deb has 4,000 people in a Telegram group who already know who he is and what SPA does. He never posts there. An AI agent can bring that group back to life with daily content, identify who is interested, and guide them toward the paid WhatsApp group. Zero effort from Deb once it is set up.</p>
-      <div class="sh-meta">
-        <span class="smeta" style="background:#eafaf2;color:var(--green);border:1px solid var(--grb)">30-day sprint</span>
-        <span class="smeta" style="background:var(--grd);color:var(--green);border:1px solid var(--grb)">Low complexity</span>
-      </div>
+  <!-- TAB 3: TELEGRAM -->
+  <div class="tab-content" id="t3">
+    <div class="block gfull" style="background:var(--grd);border-color:var(--grb);margin-bottom:12px">
+      <div class="block-title" style="color:var(--green)">Why this is the fastest return on investment in Sprint 1</div>
+      <p>4,000 people already know who Deb is and what SPA does. They are sitting in a Telegram group he never posts in. Even converting 1% of them to paid membership at £99/month is <strong>£3,960 in new monthly revenue</strong>. That is the entire Sprint 1 build cost recovered within the first month. From an audience Deb already owns.</p>
     </div>
-
-    <div class="sec-label">How the funnel works</div>
+    <div class="slabel">How the funnel works</div>
     <div class="block gfull">
       <div class="flow-wrap"><div class="flow">
         <div class="flow-step"><div class="flow-box">4,000 warm contacts in dormant Telegram group</div><div class="flow-label">Existing audience</div></div>
         <div class="flow-step"><div class="flow-box">AI agent posts daily watch list highlights</div><div class="flow-label">Re-engagement</div></div>
-        <div class="flow-step"><div class="flow-box">Someone replies or reacts to a post</div><div class="flow-label">Signal of interest</div></div>
-        <div class="flow-step"><div class="flow-box">They receive a message about the paid group</div><div class="flow-label">Conversion message</div></div>
-        <div class="flow-step"><div class="flow-box">They click the WOP link and subscribe</div><div class="flow-label">Conversion</div></div>
-        <div class="flow-step"><div class="flow-box">Sprint 2 onboarding kicks in automatically</div><div class="flow-label">Activation</div></div>
+        <div class="flow-step"><div class="flow-box">Someone replies or reacts</div><div class="flow-label">Signal</div></div>
+        <div class="flow-step"><div class="flow-box">Bot replies with paid group offer</div><div class="flow-label">Conversion message</div></div>
+        <div class="flow-step"><div class="flow-box">They click WOP link and subscribe</div><div class="flow-label">Conversion</div></div>
+        <div class="flow-step"><div class="flow-box">Component 02 onboarding kicks in</div><div class="flow-label">Activation</div></div>
       </div></div>
     </div>
-
     <div class="warn-box">
-      <div class="warn-title">&#9888; An important technical limitation to be upfront about</div>
-      <p style="font-size:13px;color:var(--t2);line-height:1.7">Telegram bots can post in groups and read when someone replies or reacts. However, a bot cannot send a private DM to a group member who has never messaged the bot directly first — Telegram does not allow it. This means the conversion message goes into the group rather than as a private DM to the individual. In practice: when someone engages with a post, the bot replies to them directly in the group thread (tagging them) with a message pointing to the paid group. This is slightly more public than a private DM but it is transparent, it works within Telegram's rules, and it still drives the conversion. If we want private DMs, we include a message at the start of the revival asking people to message the bot directly to receive exclusive updates — those who do can then receive DMs.</p>
+      <div class="warn-title">&#9888; One technical limitation to be upfront about</div>
+      <p style="font-size:13px;color:var(--t2);line-height:1.7">Telegram bots can post in groups and read when someone replies or reacts. However a bot cannot send a private DM to a group member who has never messaged the bot directly first — Telegram does not allow it. So the conversion message goes as a reply in the group thread, tagging the person directly. It is slightly more public than a private DM but it works within Telegram's rules and it still drives conversion. If we want private DMs as well, we include a pinned message at the start of the revival asking people to message the bot directly to get exclusive updates — those who do can then receive private DMs.</p>
     </div>
-
-    <div class="sec-label">What we build</div>
+    <div class="slabel">What we build</div>
     <div class="g2">
       <div class="block">
         <div class="block-title">The Telegram posting agent</div>
-        <p>A bot deployed into the existing group that posts on a schedule. Content is generated automatically from the watch list and recent market commentary — written in Deb's tone. Each post includes a clear link to the paid WhatsApp group.</p>
-        <p>Posting schedule: daily for the first two weeks to re-establish presence, then 3-4 times per week ongoing. Deb can adjust this at any time.</p>
+        <p>A bot deployed into the existing group that posts on a schedule. Content generated automatically from the watch list and recent market commentary — written in Deb's tone with a link to the paid group in every post.</p>
+        <p>Posting schedule: daily for the first two weeks to re-establish presence, then 3-4 times per week ongoing.</p>
       </div>
       <div class="block">
         <div class="block-title">Engagement detection and conversion reply</div>
-        <p>The bot monitors for reactions and replies to its posts. Anyone who engages gets a tailored response that references what they reacted to and presents the paid group as the natural next step. The message feels relevant rather than like a generic sales pitch.</p>
+        <p>The bot monitors for reactions and replies to its posts. Anyone who engages gets a reply that references what they reacted to and presents the paid group as the natural next step — relevant rather than a generic pitch.</p>
       </div>
     </div>
     <div class="g2">
       <div class="block">
         <div class="block-title">Content generation pipeline</div>
-        <p>Each morning, the system pulls the latest watch list movements and generates a Telegram post automatically. Short, punchy, and genuinely useful — the kind of content that gives people a reason to stay in the group and a reason to want more.</p>
+        <p>Each morning the system pulls the latest watch list movements and generates a Telegram post automatically. Short, punchy, genuinely useful — content that gives people a reason to stay engaged and a reason to want more.</p>
       </div>
       <div class="block">
         <div class="block-title">Conversion tracking</div>
-        <p>Every link the bot posts includes a tracking code so we know exactly how many people clicked through to WOP and how many became paying members. This tells us the exact revenue generated by the Telegram revival in real time.</p>
+        <p>Every link the bot posts includes a tracking code so we know exactly how many people clicked through to WOP and how many became paying members. Precise, real-time ROI on the Telegram revival.</p>
       </div>
     </div>
-
-    <div class="sec-label">The revenue case</div>
-    <div class="block gfull" style="background:var(--grd);border-color:var(--grb)">
-      <div class="block-title" style="color:var(--green)">Why this is the fastest return on investment of any sprint</div>
-      <p>4,000 people. Conservative 1% conversion to paid membership at £99/month = <strong>£3,960 in new monthly revenue</strong>. That is the entire build cost of this sprint recovered within the first month. At 2% conversion it is £7,920 per month. These are warm contacts who already know Deb and SPA — they are not cold leads.</p>
-    </div>
-
-    <div class="sec-label">What Deb pays monthly to run this</div>
+    <div class="slabel">What Deb pays monthly</div>
     <div class="block gfull">
-      <div class="stack-wrap">
-        <table class="stack-table">
-          <thead><tr><th>What it is</th><th>What it does in plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
-          <tbody>
-            <tr><td>Telegram Bot API</td><td>The official Telegram service that lets our bot post, read, and reply. This is free — Telegram does not charge for it.</td><td class="who-a">Free</td><td class="cost-val">£0</td></tr>
-            <tr><td>Bot hosting (Railway)</td><td>The server that keeps the bot running 24/7. Like keeping a light on.</td><td class="who-d">Deb pays directly to Railway</td><td class="cost-val">~£5&ndash;15/month</td></tr>
-            <tr><td>AI content generation (OpenAI)</td><td>Writing the daily posts in Deb's tone. Shared with Sprint 1 if that is already running.</td><td class="who-d">Deb pays — shared cost</td><td class="cost-val">Shared with S1</td></tr>
-            <tr class="total-row"><td colspan="2">Estimated monthly total — Sprint 3 only</td><td class="who-d">Deb pays</td><td class="cost-val" style="color:var(--amber)">~£5&ndash;15/month additional</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="margin-top:10px;font-size:12px;color:var(--t3)">Sprint 3 is the lowest-cost sprint to run. The potential revenue far outweighs the infrastructure cost.</div>
-    </div>
-
-    <div class="sec-label">Risks — and how we handle them</div>
-    <div class="gfull">
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>Telegram spam detection.</strong> If a bot posts too aggressively or sends too many messages too quickly, Telegram can restrict it. We pace everything carefully — a steady, human-feeling rhythm rather than a blast. The bot behaves like an active community manager, not a spam account.</div></div>
-      <div class="risk risk-low"><div class="risk-icon">&#9888;</div><div><strong>Group quality.</strong> Some of those 4,000 contacts will be inactive or bot accounts. The engagement detection naturally filters for real humans — only people who actively respond enter the conversion flow.</div></div>
-    </div>
-  </div>
-
-  <!-- ── SPRINT 4 ── -->
-  <div class="sprint" id="s4">
-    <div class="sprint-header">
-      <div class="sh-top">
-        <div class="sh-icon" style="background:#fff8e8">&#128202;</div>
-        <div>
-          <div class="sh-num">Sprint 04</div>
-          <div class="sh-title">The Watch List App — <em style="color:var(--amber)">replacing Google Sheets with something members are proud to use</em></div>
-        </div>
-      </div>
-      <p class="sh-desc">The watch list is the core product — the reason most members pay. Right now it lives in a Google Sheet, which works but does not feel premium and requires Deb to update it manually. This sprint builds a proper web application: members log in, see live prices, get a personalised news feed, and receive alerts the moment a signal fires. This is also the long-term home for the AI coach from Sprint 1.</p>
-      <div class="sh-meta">
-        <span class="smeta" style="background:#fff8e8;color:var(--amber);border:1px solid var(--ab)">30-day sprint</span>
-        <span class="smeta" style="background:var(--redd);color:var(--red);border:1px solid var(--redb)">Highest complexity</span>
-      </div>
-    </div>
-
-    <div class="warn-box">
-      <div class="warn-title">&#9888; One question we need answered before scoping Sprint 4 precisely</div>
-      <p style="font-size:13px;color:var(--t2);line-height:1.7">There is another developer who has already built a watch list MVP for Deb. Before we start Sprint 4 we need to see what that developer has built. There is no point building the same thing twice. It may be that their work is the foundation we build on top of, or it may be that we build fresh. Either way, reviewing it first saves time and money. Deb mentioned he would send this over — we need it before Sprint 4 kicks off.</p>
-    </div>
-
-    <div class="sec-label">What we build</div>
-    <div class="g2">
-      <div class="block">
-        <div class="block-title">The member-facing app</div>
-        <p>A clean, mobile-first web application. Members log in using their WOP account — no separate sign-up. They see the full watch list with live prices, Deb's signal status on each stock (buy, hold, sell), and Deb's notes on why. It looks and feels like a professional trading tool, not a spreadsheet.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">The admin interface for Deb</div>
-        <p>A private section where Deb or a VA manages the watch list. Add a stock, remove a stock, update the signal status, add a note. Changes appear to all members instantly. No code, no spreadsheet — just a simple form.</p>
-      </div>
-    </div>
-    <div class="g3">
-      <div class="block">
-        <div class="block-title">Live prices</div>
-        <p>The app connects to a market data service that provides live stock prices throughout the trading day. Members see real-time information, not yesterday's numbers from a spreadsheet.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">Personalised news feed</div>
-        <p>Each member can mark which stocks they personally hold. They then see a news feed showing only stories relevant to those stocks — summarised in plain English by AI, updated throughout the day.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">Push alerts</div>
-        <p>When Deb changes a stock to Buy or Sell in the admin interface, a WhatsApp message fires automatically to all relevant members. The plain English explanation from the Sprint 1 AI is attached.</p>
-      </div>
-    </div>
-    <div class="block gfull">
-      <div class="block-title">Member access tied to subscription</div>
-      <p>Member login is linked directly to their WOP subscription status. If they cancel, access is revoked automatically — this connects directly to the Sprint 2 offboarding system. New members get access automatically when they pay. There is no manual management of who can and cannot log in.</p>
-    </div>
-
-    <div class="sec-label">What Deb pays monthly to run this</div>
-    <div class="block gfull">
-      <div class="stack-wrap">
-        <table class="stack-table">
-          <thead><tr><th>What it is</th><th>What it does in plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
-          <tbody>
-            <tr><td>Database and member login (Supabase)</td><td>Where the watch list data and member records live securely. Also handles the secure login system.</td><td class="who-d">Deb pays directly to Supabase</td><td class="cost-val">~£20&ndash;50/month</td></tr>
-            <tr><td>App hosting (Vercel)</td><td>Where the web application lives so members can access it from any device.</td><td class="who-d">Deb pays directly to Vercel</td><td class="cost-val">~£15&ndash;30/month</td></tr>
-            <tr><td>Live stock prices (Alpha Vantage or Polygon)</td><td>The service that provides real-time stock prices. Like a live data feed from the market, updated throughout the trading day.</td><td class="who-d">Deb pays directly to the provider</td><td class="cost-val">~£30&ndash;80/month</td></tr>
-            <tr><td>Financial news feed (Marketaux or similar)</td><td>The service that provides news articles about specific stocks. The AI then summarises these into plain English for each member's personalised feed.</td><td class="who-d">Deb pays directly to the provider</td><td class="cost-val">~£20&ndash;50/month</td></tr>
-            <tr><td>AI news summarisation (OpenAI)</td><td>Turning financial news articles into short plain English summaries for members.</td><td class="who-d">Deb pays — shared with Sprint 1</td><td class="cost-val">Shared with S1</td></tr>
-            <tr class="total-row"><td colspan="2">Estimated monthly total — Sprint 4 only</td><td class="who-d">Deb pays</td><td class="cost-val" style="color:var(--amber)">~£85&ndash;210/month additional</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="sec-label">Risks — and how we handle them</div>
-    <div class="gfull">
-      <div class="risk risk-high"><div class="risk-icon">&#9888;</div><div><strong>This is the most complex sprint and 30 days is tight.</strong> We are building a web application with member login, live data, an admin system, push alerts, and a news feed. To deliver this in 30 days we need to lock the scope on day one and not expand it during the sprint. Everything that is not in the agreed list goes on the roadmap for a future sprint. The other developer's existing MVP also needs to be reviewed in week one — if there is reusable work there it reduces the build time significantly.</div></div>
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>Live market data costs at scale.</strong> Most market data APIs charge based on how many times the data is requested. We build the app to cache data intelligently — storing the latest prices and only refreshing them periodically rather than requesting them every time a member opens the app. This keeps costs predictable as the member count grows.</div></div>
-      <div class="risk risk-low"><div class="risk-icon">&#9888;</div><div><strong>Regulatory.</strong> Displaying stock signals on a platform members pay to access could be considered financial advice in certain contexts. Standard FCA-appropriate disclaimers are displayed on every signal. Deb's legal position on this should be confirmed with his solicitor before launch.</div></div>
-    </div>
-  </div>
-
-  <!-- ── SPRINT 5 ── -->
-  <div class="sprint" id="s5">
-    <div class="sprint-header">
-      <div class="sh-top">
-        <div class="sh-icon" style="background:#fffae8">&#127916;</div>
-        <div>
-          <div class="sh-num">Sprint 05</div>
-          <div class="sh-title">The AI Avatar — <em style="color:var(--gold)">Deb on camera, without Deb being on camera</em></div>
-        </div>
-      </div>
-      <p class="sh-desc">Deb needs consistent Instagram content but does not have the time or energy to sit in front of a camera every day. This sprint creates a digital version of Deb — his face, his voice, his style — that can deliver any script. Combined with an AI pipeline that generates the scripts automatically, the result is a full content production engine. Deb reviews a batch of scripts once a week. Everything else is automated.</p>
-      <div class="sh-meta">
-        <span class="smeta" style="background:#fffae8;color:var(--gold);border:1px solid var(--gb)">30-day sprint</span>
-        <span class="smeta" style="background:var(--ad);color:var(--amber);border:1px solid var(--ab)">Medium complexity</span>
-      </div>
-    </div>
-
-    <div class="sec-label">How the production pipeline works end to end</div>
-    <div class="block gfull">
-      <div class="flow-wrap"><div class="flow">
-        <div class="flow-step"><div class="flow-box">Deb records training footage once (30-60 mins)</div><div class="flow-label">One-time setup</div></div>
-        <div class="flow-step"><div class="flow-box">Digital avatar and cloned voice created</div><div class="flow-label">Identity built</div></div>
-        <div class="flow-step"><div class="flow-box">AI writes scripts from watch list and strategy content</div><div class="flow-label">Scripts generated</div></div>
-        <div class="flow-step"><div class="flow-box">Deb or VA reviews and approves the week's scripts</div><div class="flow-label">Human review</div></div>
-        <div class="flow-step"><div class="flow-box">Avatar renders videos automatically overnight</div><div class="flow-label">Production</div></div>
-        <div class="flow-step"><div class="flow-box">Captions, branding, crops added — scheduled to post</div><div class="flow-label">Distribution</div></div>
-      </div></div>
-    </div>
-
-    <div class="sec-label">What we build</div>
-    <div class="g2">
-      <div class="block">
-        <div class="block-title">The avatar and voice clone</div>
-        <p>Deb records 30-60 minutes of natural footage — talking normally, not scripted. This is used to train a digital avatar model using a tool called HeyGen. Separately, 10-15 minutes of clean audio is used to clone Deb's voice using ElevenLabs. The result is a digital twin that can deliver any script with Deb's face and voice.</p>
-        <p>This is a one-time setup. Once trained, the avatar produces unlimited videos. The more training footage provided, the more realistic the result.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">The script generation pipeline</div>
-        <p>Three types of scripts are generated automatically each week:</p>
-        <p><strong>Watch list commentary</strong> — what is on the list, what to watch, the signal explained simply<br><strong>Spartan strategy explainers</strong> — 60-second educational breakdowns of how the strategy works<br><strong>Member win highlights</strong> — converting profit screenshots from the WhatsApp group into video social proof</p>
-        <p>Scripts are written for 30, 60, and 90 second formats — matched to the platform they are going to.</p>
-      </div>
-    </div>
-    <div class="g3">
-      <div class="block">
-        <div class="block-title">Programmatic video rendering</div>
-        <p>Once scripts are approved, they are fed into HeyGen via its API — not manually uploaded one by one. The system renders all approved videos overnight in a single automated run. A week of content is produced without anyone sitting at a computer doing it.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">Automated editing</div>
-        <p>Each rendered video goes through an editing pipeline automatically. Captions are generated and embedded. Deb's branding and logo are added. The video is cropped into the correct format for each platform — vertical for Instagram Reels and TikTok, horizontal for YouTube. Output is platform-ready.</p>
-      </div>
-      <div class="block">
-        <div class="block-title">Scheduling and posting</div>
-        <p>Finished videos are loaded into a scheduling tool that posts them automatically at the best times for each platform. Deb's only involvement is reviewing and approving scripts on Monday. Everything else happens without him.</p>
-      </div>
-    </div>
-
-    <div class="block gfull" style="background:var(--ad);border-color:var(--ab)">
-      <div class="block-title" style="color:var(--amber)">The human review step — this is non-negotiable</div>
-      <p>Deb specifically said on our call that he does not want AI content to be so robotic that people can tell. We agree completely. The review step exists for exactly this reason. Scripts go to Deb or a VA for approval before any video is rendered. Nothing publishes without a human reading it first. The AI does the heavy lifting — generating, rendering, editing, scheduling. The human ensures nothing sounds wrong before it goes out. This is already how Deb's newsletters work with his ghostwriter. We apply the same model to video.</p>
-    </div>
-
-    <div class="sec-label">What Deb pays monthly to run this</div>
-    <div class="block gfull">
-      <div class="stack-wrap">
-        <table class="stack-table">
-          <thead><tr><th>What it is</th><th>What it does in plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
-          <tbody>
-            <tr><td>HeyGen (avatar video rendering)</td><td>The service that creates the avatar and renders each video. Cost depends on how many videos are produced per month. At 5 videos per week (20 per month) you are in the mid-range plan.</td><td class="who-d">Deb pays directly to HeyGen</td><td class="cost-val">~£95&ndash;250/month</td></tr>
-            <tr><td>ElevenLabs (voice cloning)</td><td>The service that stores and uses the cloned voice to generate the audio for each video.</td><td class="who-d">Deb pays directly to ElevenLabs</td><td class="cost-val">~£20&ndash;55/month</td></tr>
-            <tr><td>Script generation (OpenAI)</td><td>Writing the video scripts from watch list and strategy content. Shared with Sprint 1 if already running.</td><td class="who-d">Deb pays — shared cost</td><td class="cost-val">Shared with S1</td></tr>
-            <tr><td>Social media scheduler (Buffer)</td><td>The tool that automatically posts videos to Instagram, TikTok, and YouTube at the scheduled times.</td><td class="who-d">Deb pays directly to Buffer</td><td class="cost-val">~£15&ndash;30/month</td></tr>
-            <tr class="total-row"><td colspan="2">Estimated monthly total — Sprint 5 only</td><td class="who-d">Deb pays</td><td class="cost-val" style="color:var(--amber)">~£130&ndash;335/month additional</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="sec-label">Risks — and how we handle them</div>
-    <div class="gfull">
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>Avatar quality depends on the training footage.</strong> A good recording session produces a very convincing avatar. A poor recording — bad lighting, inconsistent background, rushed delivery — produces something people can tell is AI. We send Deb a detailed recording guide before the session covering lighting, background, camera position, speech pace, and what to say. The quality of the output is directly tied to the quality of the input.</div></div>
-      <div class="risk risk-med"><div class="risk-icon">&#9888;</div><div><strong>Platform policies on AI content.</strong> Instagram, TikTok, and YouTube are all introducing requirements to disclose AI-generated content. We recommend Deb discloses his avatar openly from the start — his audience will find it interesting and it removes any future risk. Deb was already planning to do this, which is exactly the right approach.</div></div>
-      <div class="risk risk-low"><div class="risk-icon">&#9888;</div><div><strong>The review step becoming a bottleneck.</strong> If scripts are not reviewed by Wednesday, the week's videos cannot be rendered and the posting schedule slips. We set a clear weekly rhythm: scripts ready Monday, approved by Wednesday, content posts Thursday through Wednesday. Simple and predictable.</div></div>
-    </div>
-  </div>
-
-  <!-- COMBINED COST TABLE -->
-  <div class="combined-wrap">
-    <div class="combined-title">What all five sprints cost to run every month</div>
-    <div class="combined-sub">Once all five sprints are live, here is everything Deb pays directly to the various platforms and services each month. These are the utility bills. None of this goes through Altitude AI — you pay the providers directly.</div>
-    <div class="stack-wrap">
-      <table class="stack-table">
-        <thead><tr><th>Service</th><th>What it does</th><th>Low estimate</th><th>High estimate</th></tr></thead>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>What it is</th><th>Plain English</th><th>Who pays</th><th>Monthly cost</th></tr></thead>
         <tbody>
-          <tr><td>OpenAI — AI responses, scripts, summaries</td><td>Shared across Sprints 1, 3, 4, and 5</td><td class="cost-val">£80</td><td class="cost-val">£200</td></tr>
-          <tr><td>WhatsApp Business provider (360dialog)</td><td>Sprint 1 and 2 — member messaging</td><td class="cost-val">£50</td><td class="cost-val">£120</td></tr>
-          <tr><td>Supabase — database and member login</td><td>Sprints 1 and 4</td><td class="cost-val">£20</td><td class="cost-val">£50</td></tr>
-          <tr><td>Vercel/Railway — app and bot hosting</td><td>Sprints 1, 3, and 4</td><td class="cost-val">£20</td><td class="cost-val">£50</td></tr>
-          <tr><td>Make — automation platform</td><td>Sprint 2</td><td class="cost-val">£20</td><td class="cost-val">£45</td></tr>
-          <tr><td>Alpha Vantage/Polygon — live stock prices</td><td>Sprint 4</td><td class="cost-val">£30</td><td class="cost-val">£80</td></tr>
-          <tr><td>Marketaux — financial news</td><td>Sprint 4</td><td class="cost-val">£20</td><td class="cost-val">£50</td></tr>
-          <tr><td>HeyGen — avatar video rendering</td><td>Sprint 5</td><td class="cost-val">£95</td><td class="cost-val">£250</td></tr>
-          <tr><td>ElevenLabs — voice cloning</td><td>Sprint 5</td><td class="cost-val">£20</td><td class="cost-val">£55</td></tr>
-          <tr><td>Buffer — social media scheduling</td><td>Sprint 5</td><td class="cost-val">£15</td><td class="cost-val">£30</td></tr>
-          <tr><td>Telegram bot hosting (Railway)</td><td>Sprint 3</td><td class="cost-val">£5</td><td class="cost-val">£15</td></tr>
-          <tr class="total-row"><td>Total monthly infrastructure — all 5 sprints</td><td style="color:var(--t3);font-size:12px">At current member count (~300 active members)</td><td class="cost-val" style="color:var(--amber)">~£375</td><td class="cost-val" style="color:var(--amber)">~£945</td></tr>
-          <tr class="total-row"><td colspan="2" style="color:var(--gold);font-weight:600">Realistic mid-range estimate for SPA today</td><td colspan="2" class="cost-val" style="color:var(--gold);font-size:14px">~£500&ndash;600/month</td></tr>
+          <tr><td>Telegram Bot API</td><td>The official Telegram service that lets the bot post and reply. Free — Telegram does not charge for it.</td><td class="who-a">Free</td><td class="cv">£0</td></tr>
+          <tr><td>Bot hosting (Railway)</td><td>The server that keeps the bot running 24/7.</td><td class="who-d">Deb pays Railway directly</td><td class="cv">~£5&ndash;15/month</td></tr>
+          <tr><td>AI content generation (OpenAI)</td><td>Writing the daily posts in Deb's tone. Shared with Component 01.</td><td class="who-d">Shared cost</td><td class="cv">Shared with C01</td></tr>
+          <tr class="tr-total"><td colspan="2">Component 03 additional monthly cost</td><td class="who-d">Deb pays</td><td class="cv" style="color:var(--amber)">~£5&ndash;15/month</td></tr>
         </tbody>
-      </table>
+      </table></div>
+      <div style="margin-top:10px;font-size:12px;color:var(--t3)">This is the lowest-cost component in Sprint 1. The potential revenue far outweighs the infrastructure cost.</div>
     </div>
-    <div style="margin-top:16px;background:var(--gd);border:1px solid var(--gb);border-radius:8px;padding:14px 18px;font-size:13px;color:var(--t2);line-height:1.75">
-      <strong style="color:var(--gold)">How these costs scale.</strong> Most of these costs are relatively fixed — hosting, the WhatsApp provider, scheduling tools, stock data. The parts that scale with member count are the AI usage costs (OpenAI) and the WhatsApp messaging costs. At 300 members you are at the low end. At 1,000 members you move toward the mid-range. At 5,000 members the AI costs increase but hosting and data costs stay roughly flat. We will provide a specific estimate for your exact situation before each sprint begins.
+    <div class="slabel">Risks and how we handle them</div>
+    <div class="gfull">
+      <div class="risk r-med"><div class="risk-icon">&#9888;</div><div><strong>Telegram spam detection.</strong> If a bot posts too aggressively, Telegram can restrict it. We pace everything carefully — a steady, human-feeling rhythm. The bot behaves like an active community manager, not a spam account.</div></div>
+      <div class="risk r-low"><div class="risk-icon">&#9888;</div><div><strong>Group quality.</strong> Some of the 4,000 contacts may be inactive or bot accounts. The engagement detection naturally filters for real humans — only people who actively respond enter the conversion flow.</div></div>
     </div>
   </div>
 
-</div><!-- end body-section -->
+  <!-- SPRINT 1 COMBINED COST -->
+  <div class="block gfull" style="background:var(--s1);border:1px solid var(--b2);margin-top:24px">
+    <div class="block-title">Sprint 1 — combined monthly infrastructure cost</div>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>Service</th><th>Covers</th><th>Low</th><th>High</th></tr></thead>
+      <tbody>
+        <tr><td>OpenAI — AI responses and content generation</td><td>Components 01 and 03</td><td class="cv">£50</td><td class="cv">£150</td></tr>
+        <tr><td>WhatsApp Business provider (360dialog)</td><td>Components 01 and 02</td><td class="cv">£50</td><td class="cv">£120</td></tr>
+        <tr><td>Supabase — knowledge base storage</td><td>Component 01</td><td class="cv">£20</td><td class="cv">£50</td></tr>
+        <tr><td>Hosting (Vercel/Railway)</td><td>Components 01 and 03</td><td class="cv">£20</td><td class="cv">£50</td></tr>
+        <tr><td>Make — automation platform</td><td>Component 02</td><td class="cv">£20</td><td class="cv">£45</td></tr>
+        <tr class="tr-total"><td>Sprint 1 total monthly infrastructure</td><td style="font-size:12px;color:var(--t3)">At ~300 active members</td><td class="cv" style="color:var(--amber)">~£160</td><td class="cv" style="color:var(--amber)">~£415</td></tr>
+        <tr class="tr-total"><td colspan="2" style="color:var(--gold)">Realistic mid-range for SPA today</td><td colspan="2" class="cv" style="color:var(--gold);font-size:13px">~£250&ndash;300/month</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="roadmap">
+    <div class="sec-header">
+      <div class="sec-eyebrow">What comes next</div>
+      <div class="sec-title">The full roadmap — beyond Sprint 1</div>
+      <div class="sec-sub">Sprint 1 is the foundation. Once it is live and working, here is what the next two sprints look like and when they happen. Indicative pricing — exact numbers are confirmed at the start of each sprint once scope is locked.</div>
+    </div>
+
+    <div class="rm-item">
+      <div>
+        <div class="rm-phase">Current</div>
+        <div class="rm-timeline">Month 1</div>
+        <div class="rm-status rm-st-now">Building now</div>
+      </div>
+      <div>
+        <div class="rm-title">Sprint 1 — AI Coach, Joining Flow, Telegram Revival</div>
+        <div class="rm-desc">Three components delivered together. AI coach live in WhatsApp, fully automated joining experience from payment to active member, and the Telegram revival funnel turning 4,000 warm contacts into paying members.</div>
+        <div class="rm-items">
+          <span class="rm-tag">AI Coach in WhatsApp</span>
+          <span class="rm-tag">Joining automation</span>
+          <span class="rm-tag">Telegram revival funnel</span>
+        </div>
+        <div class="rm-price">Build fee: £3,500 &nbsp;&middot;&nbsp; Ongoing infrastructure: ~£250&ndash;300/month</div>
+      </div>
+    </div>
+
+    <div class="rm-item">
+      <div>
+        <div class="rm-phase">Next</div>
+        <div class="rm-timeline">Month 2</div>
+        <div class="rm-status rm-st-next">Planned</div>
+      </div>
+      <div>
+        <div class="rm-title">Sprint 2 — The Watch List App</div>
+        <div class="rm-desc">A professional web application replacing Google Sheets. Members log in, see live stock prices, get a personalised news feed for the stocks they hold, and receive instant alerts when a signal fires. Also becomes the long-term home for the AI coach built in Sprint 1. Before this sprint begins, we review the existing watch list MVP built by the other developer — there may be reusable work that reduces build time.</div>
+        <div class="rm-items">
+          <span class="rm-tag">Member login</span>
+          <span class="rm-tag">Live prices</span>
+          <span class="rm-tag">Admin interface for Deb</span>
+          <span class="rm-tag">Personalised news feed</span>
+          <span class="rm-tag">Push alerts</span>
+          <span class="rm-tag">AI coach web interface</span>
+        </div>
+        <div class="rm-price">Indicative build fee: £3,000&ndash;£4,000 &nbsp;&middot;&nbsp; Ongoing infrastructure: ~£85&ndash;210/month additional</div>
+      </div>
+    </div>
+
+    <div class="rm-item">
+      <div>
+        <div class="rm-phase">Following</div>
+        <div class="rm-timeline">Month 3</div>
+        <div class="rm-status rm-st-later">Planned</div>
+      </div>
+      <div>
+        <div class="rm-title">Sprint 3 — The AI Avatar Content Engine</div>
+        <div class="rm-desc">Deb records himself once. From that, a digital avatar and cloned voice are created. AI generates video scripts from the watch list and strategy content. The avatar delivers them. Captions, branding, and platform-specific formatting are added automatically. A week of Instagram, TikTok, and YouTube content is produced from one Monday script approval session — no camera time from Deb. Human review step built in so nothing posts without approval.</div>
+        <div class="rm-items">
+          <span class="rm-tag">Digital avatar (HeyGen)</span>
+          <span class="rm-tag">Voice cloning</span>
+          <span class="rm-tag">Automated script generation</span>
+          <span class="rm-tag">Programmatic video rendering</span>
+          <span class="rm-tag">Auto-captions and branding</span>
+          <span class="rm-tag">Multi-platform scheduling</span>
+        </div>
+        <div class="rm-price">Indicative build fee: £2,500&ndash;£3,500 &nbsp;&middot;&nbsp; Ongoing infrastructure: ~£130&ndash;335/month additional</div>
+      </div>
+    </div>
+
+    <!-- COMBINED COST ALL SPRINTS -->
+    <div class="combined">
+      <div class="combined-title">All three sprints live — combined monthly infrastructure</div>
+      <div class="combined-sub">Once Sprints 1, 2, and 3 are all running, here is the full picture of what Deb pays monthly to keep everything operational. These go directly to the providers — not through Altitude AI.</div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Service</th><th>What it does</th><th>Low</th><th>High</th></tr></thead>
+        <tbody>
+          <tr><td>OpenAI — AI across all sprints</td><td>AI coach responses, script generation, news summarisation</td><td class="cv">£80</td><td class="cv">£200</td></tr>
+          <tr><td>WhatsApp Business (360dialog)</td><td>Member messaging — Sprints 1 and 2</td><td class="cv">£50</td><td class="cv">£120</td></tr>
+          <tr><td>Supabase — database and login</td><td>Knowledge base and member auth</td><td class="cv">£20</td><td class="cv">£50</td></tr>
+          <tr><td>Vercel/Railway — hosting</td><td>All running systems</td><td class="cv">£20</td><td class="cv">£50</td></tr>
+          <tr><td>Make — automation platform</td><td>Joining flow logic</td><td class="cv">£20</td><td class="cv">£45</td></tr>
+          <tr><td>Alpha Vantage/Polygon — live prices</td><td>Stock data for watch list app</td><td class="cv">£30</td><td class="cv">£80</td></tr>
+          <tr><td>Marketaux — financial news</td><td>Personalised news feed</td><td class="cv">£20</td><td class="cv">£50</td></tr>
+          <tr><td>HeyGen — avatar video rendering</td><td>AI avatar content</td><td class="cv">£95</td><td class="cv">£250</td></tr>
+          <tr><td>ElevenLabs — voice cloning</td><td>Audio for avatar videos</td><td class="cv">£20</td><td class="cv">£55</td></tr>
+          <tr><td>Buffer — social scheduling</td><td>Posting avatar videos to platforms</td><td class="cv">£15</td><td class="cv">£30</td></tr>
+          <tr><td>Telegram bot hosting</td><td>Keeps the Telegram agent running</td><td class="cv">£5</td><td class="cv">£15</td></tr>
+          <tr class="tr-total"><td>Total monthly — all three sprints live</td><td style="font-size:12px;color:var(--t3)">At current ~300 members</td><td class="cv" style="color:var(--amber)">~£375</td><td class="cv" style="color:var(--amber)">~£945</td></tr>
+          <tr class="tr-total"><td colspan="2" style="color:var(--gold)">Realistic mid-range for SPA at current scale</td><td colspan="2" class="cv" style="color:var(--gold);font-size:13px">~£500&ndash;600/month</td></tr>
+        </tbody>
+      </table></div>
+      <div style="margin-top:14px;background:var(--gd);border:1px solid var(--gb);border-radius:8px;padding:14px 18px;font-size:13px;color:var(--t2);line-height:1.75">
+        <strong style="color:var(--gold)">How these costs scale.</strong> The fixed costs — hosting, scheduling tools, stock data — stay roughly flat as membership grows. The costs that scale with growth are AI usage (more members asking more questions) and WhatsApp messaging (more members receiving messages). At 1,000 members you move toward the mid-range. At 5,000 members the AI costs increase meaningfully but the others stay flat. We will give you a specific estimate for your exact situation before each sprint begins.
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <footer>
   <span class="f-brand">Altitude AI Consulting</span>
@@ -675,12 +555,12 @@ footer{background:var(--bg-dark);padding:32px 2rem;display:flex;align-items:cent
 </footer>
 
 <script>
-function showSprint(id,btn){
-  document.querySelectorAll('.sprint').forEach(function(s){s.classList.remove('active')});
-  document.querySelectorAll('.stab').forEach(function(b){b.classList.remove('active')});
+function showTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active')});
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  window.scrollTo({top:document.querySelector('.sprint-nav').offsetTop-70,behavior:'smooth'});
+  window.scrollTo({top:document.querySelector('.tab-nav').offsetTop-70,behavior:'smooth'});
 }
 </script>
 </body>
