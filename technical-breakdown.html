@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;background:#0a0a0a}
+html,body{height:100%;overflow:hidden;background:#f7f6f3}
 body{font-family:"DM Sans",sans-serif;color:#f0ede8}
 
 /* SLIDE ENGINE */
@@ -25,117 +25,117 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
 
 /* PROGRESS DOTS */
 .dots{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:100}
-.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.25s}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,0.15);cursor:pointer;transition:all 0.25s}
 .dot.on{background:#c9a84c;width:20px;border-radius:3px}
 
 /* ARROW BUTTONS */
-.arrow{position:fixed;bottom:20px;z-index:100;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all 0.2s;user-select:none}
-.arrow:hover{background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.3)}
+.arrow{position:fixed;bottom:20px;z-index:100;width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,0.15);background:rgba(255,255,255,0.8);color:rgba(0,0,0,0.5);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all 0.2s;user-select:none;backdrop-filter:blur(8px)}
+.arrow:hover{background:#fff;color:#1a1814;border-color:rgba(0,0,0,0.25)}
 .arrow.prev{left:calc(50% - 80px);transform:translateX(-50%)}
 .arrow.next{right:calc(50% - 80px);transform:translateX(50%)}
 .arrow:disabled{opacity:0.2;cursor:default}
 
 /* KEYBOARD HINT */
-.hint{position:fixed;bottom:28px;right:32px;font-family:"DM Mono",monospace;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.06em}
+.hint{position:fixed;bottom:28px;right:32px;font-family:"DM Mono",monospace;font-size:10px;color:rgba(0,0,0,0.2);letter-spacing:0.06em}
 
 /* SLIDE LAYOUTS */
 .slide-inner{width:100%;max-width:900px}
 .eyebrow{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:"";width:14px;height:1px;background:#c9a84c}
-.slide-title{font-family:"Syne",sans-serif;font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:#f0ede8;margin-bottom:16px}
+.slide-title{font-family:"Syne",sans-serif;font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:#1a1814;margin-bottom:16px}
 .slide-title em{font-style:normal;color:#c9a84c}
-.slide-sub{font-size:15px;color:rgba(240,237,232,0.6);max-width:540px;line-height:1.8}
+.slide-sub{font-size:15px;color:#6a6560;max-width:540px;line-height:1.8}
 
 /* SLIDE 1 — TITLE */
-.s1{background:#0a0a0a}
+.s1{background:#0a0a0a;color:#f0ede8}.s1 .slide-title{color:#f0ede8}.s1 .slide-sub{color:rgba(240,237,232,0.6)}
 
 /* SLIDE 2 — THE BOX */
-.s2{background:#0d0d0d;align-items:flex-start}
+.s2{background:#f7f6f3;align-items:flex-start;color:#1a1814}
 .sprint-box{border:2px dashed rgba(201,168,76,0.35);border-radius:14px;padding:24px;position:relative;margin-top:20px;width:100%}
 .box-label{position:absolute;top:-12px;left:20px;background:#0d0d0d;padding:0 10px;font-family:"Syne",sans-serif;font-size:13px;font-weight:700;color:#c9a84c}
 .box-right{position:absolute;top:-12px;right:20px;background:#0d0d0d;padding:0 10px;font-family:"DM Mono",monospace;font-size:11px;color:rgba(240,237,232,0.4)}
 .comp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
-.comp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden}
-.comp-h{background:rgba(255,255,255,0.06);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.comp{background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:8px;overflow:hidden}
+.comp-h{background:#1a1814;padding:10px 14px;border-bottom:1px solid rgba(0,0,0,0.08)}
 .comp-num{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:3px}
 .comp-name{font-family:"Syne",sans-serif;font-size:13px;font-weight:700;color:#f0ede8}
 .comp-b{padding:10px 14px}
 .comp-result{font-size:11px;color:#4caf7d;font-weight:600;margin-bottom:7px;display:flex;align-items:center;gap:5px}
 .comp-result::before{content:"";width:5px;height:5px;border-radius:50%;background:#4caf7d;flex-shrink:0}
 .comp-pts{list-style:none}
-.comp-pts li{font-size:11px;color:rgba(240,237,232,0.55);padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5}
+.comp-pts li{font-size:11px;color:#5a5550;padding:2px 0;border-bottom:1px solid rgba(0,0,0,0.06);line-height:1.5}
 .comp-pts li:last-child{border:none}
-.outside-row{margin-top:12px;padding:10px 14px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.05)}
-.outside-lbl{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:7px}
+.outside-row{margin-top:12px;padding:10px 14px;background:rgba(0,0,0,0.03);border-radius:8px;border:1px solid rgba(0,0,0,0.07)}
+.outside-lbl{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9a9590;margin-bottom:7px}
 .outside-pills{display:flex;flex-wrap:wrap;gap:6px}
-.opill{font-size:11px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:rgba(240,237,232,0.3)}
+.opill{font-size:11px;padding:3px 10px;border-radius:999px;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.09);color:#9a9590}
 
 /* SLIDE 3 — COSTS */
-.s3{background:#0a0a0a;align-items:flex-start}
+.s3{background:#f7f6f3;align-items:flex-start;color:#1a1814}
 .cost-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;width:100%}
-.cost-col{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:24px}
+.cost-col{background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:24px}
 .cbadge{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px;display:inline-block;margin-bottom:12px}
 .cbg{background:rgba(45,138,94,0.15);color:#4caf7d;border:1px solid rgba(45,138,94,0.3)}
 .cba{background:rgba(196,115,26,0.12);color:#e09945;border:1px solid rgba(196,115,26,0.3)}
-.cost-col h3{font-family:"Syne",sans-serif;font-size:16px;font-weight:700;color:#f0ede8;margin-bottom:6px}
-.cost-col p{font-size:13px;color:rgba(240,237,232,0.55);line-height:1.7}
-.cost-num{font-family:"DM Mono",monospace;font-size:22px;font-weight:600;color:#f0ede8;margin-top:12px}
-.cost-num-sub{font-size:11px;color:rgba(240,237,232,0.3);margin-top:2px}
-.analogy-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:20px 24px;margin-top:16px;font-size:13px;color:rgba(240,237,232,0.6);line-height:1.8;width:100%}
+.cost-col h3{font-family:"Syne",sans-serif;font-size:16px;font-weight:700;color:#1a1814;margin-bottom:6px}
+.cost-col p{font-size:13px;color:#6a6560;line-height:1.7}
+.cost-num{font-family:"DM Mono",monospace;font-size:22px;font-weight:600;color:#1a1814;margin-top:12px}
+.cost-num-sub{font-size:11px;color:#9a9590;margin-top:2px}
+.analogy-box{background:rgba(184,146,42,0.07);border:1px solid rgba(184,146,42,0.25);border-radius:10px;padding:20px 24px;margin-top:16px;font-size:13px;color:#5a5550;line-height:1.8;width:100%}
 .analogy-box strong{color:#c9a84c}
 
 /* SLIDES 4-6 — COMPONENT DETAIL */
-.comp-detail{background:#0d0d0d;align-items:flex-start}
+.comp-detail{background:#f7f6f3;align-items:flex-start;color:#1a1814}
 .comp-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
 .cb1{background:rgba(107,79,196,0.12);color:#9b7fe8;border:1px solid rgba(107,79,196,0.25)}
 .cb2{background:rgba(47,95,196,0.12);color:#5b8dee;border:1px solid rgba(47,95,196,0.25)}
 .cb3{background:rgba(45,138,94,0.12);color:#4caf7d;border:1px solid rgba(45,138,94,0.25)}
-.detail-title{font-family:"Syne",sans-serif;font-size:clamp(22px,3vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:#f0ede8;margin-bottom:8px}
-.detail-sub{font-size:14px;color:rgba(240,237,232,0.55);max-width:580px;line-height:1.7;margin-bottom:20px}
+.detail-title{font-family:"Syne",sans-serif;font-size:clamp(22px,3vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:#1a1814;margin-bottom:8px}
+.detail-sub{font-size:14px;color:#6a6560;max-width:580px;line-height:1.7;margin-bottom:20px}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%}
-.dcard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px}
-.dcard-title{font-family:"Syne",sans-serif;font-size:12px;font-weight:600;color:rgba(240,237,232,0.5);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px}
-.dcard p{font-size:13px;color:rgba(240,237,232,0.65);line-height:1.7}
-.dcard strong{color:#f0ede8}
+.dcard{background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:8px;padding:16px}
+.dcard-title{font-family:"Syne",sans-serif;font-size:12px;font-weight:600;color:#8a847a;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px}
+.dcard p{font-size:13px;color:#5a5550;line-height:1.7}
+.dcard strong{color:#1a1814}
 
 /* FLOW DIAGRAM */
 .flow-row{display:flex;align-items:center;gap:0;width:100%;margin-bottom:16px;overflow-x:auto}
 .fstep{flex:1;min-width:0}
-.fbox{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:10px 8px;text-align:center}
-.fbox.highlight{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.3)}
-.fbox.result{background:rgba(45,138,94,0.1);border-color:rgba(45,138,94,0.3)}
-.fnum{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:4px}
-.ftitle{font-family:"Syne",sans-serif;font-size:11px;font-weight:600;color:#f0ede8;line-height:1.3}
-.fsub{font-size:10px;color:rgba(240,237,232,0.4);margin-top:3px;line-height:1.4}
-.farrow{color:rgba(255,255,255,0.2);font-size:16px;padding:0 6px;flex-shrink:0}
+.fbox{background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:7px;padding:10px 8px;text-align:center}
+.fbox.highlight{background:rgba(184,146,42,0.08);border-color:rgba(184,146,42,0.3)}
+.fbox.result{background:rgba(45,138,94,0.08);border-color:rgba(45,138,94,0.3)}
+.fnum{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#9a9590;margin-bottom:4px}
+.ftitle{font-family:"Syne",sans-serif;font-size:11px;font-weight:600;color:#1a1814;line-height:1.3}
+.fsub{font-size:10px;color:#8a847a;margin-top:3px;line-height:1.4}
+.farrow{color:rgba(0,0,0,0.2);font-size:16px;padding:0 6px;flex-shrink:0}
 
 /* COST TABLE IN SLIDES */
 .cost-tbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:14px}
-.cost-tbl th{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);padding:6px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.07)}
-.cost-tbl td{color:rgba(240,237,232,0.55);padding:7px 10px;border-bottom:1px solid rgba(255,255,255,0.05)}
-.cost-tbl .tr-tot td{color:#f0ede8;font-weight:600;border-top:1px solid rgba(255,255,255,0.12);border-bottom:none}
+.cost-tbl th{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#9a9590;padding:6px 10px;text-align:left;border-bottom:1px solid rgba(0,0,0,0.08)}
+.cost-tbl td{color:#5a5550;padding:7px 10px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.cost-tbl .tr-tot td{color:#1a1814;font-weight:600;border-top:1px solid rgba(0,0,0,0.1);border-bottom:none;background:#f0ede8}
 .wa{color:#4caf7d}.wd{color:#e09945}
 .cv{font-family:"DM Mono",monospace;font-size:11px}
 
 /* SLIDE 7 — ROADMAP */
-.s7{background:#0a0a0a;align-items:flex-start}
+.s7{background:#f7f6f3;align-items:flex-start;color:#1a1814}
 .rm-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;width:100%;margin-top:20px}
-.rm-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:20px}
+.rm-card{background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:20px}
 .rm-card.now{background:rgba(45,138,94,0.06);border-color:rgba(45,138,94,0.25)}
-.rm-phase{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px}
-.rm-title{font-family:"Syne",sans-serif;font-size:14px;font-weight:700;color:#f0ede8;margin-bottom:6px;line-height:1.3}
-.rm-desc{font-size:12px;color:rgba(240,237,232,0.5);line-height:1.65;margin-bottom:10px}
+.rm-phase{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9a9590;margin-bottom:8px}
+.rm-title{font-family:"Syne",sans-serif;font-size:14px;font-weight:700;color:#1a1814;margin-bottom:6px;line-height:1.3}
+.rm-desc{font-size:12px;color:#6a6560;line-height:1.65;margin-bottom:10px}
 .rm-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
-.rm-tag{font-size:10px;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(240,237,232,0.4)}
-.rm-price{font-family:"DM Mono",monospace;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.6}
+.rm-tag{font-size:10px;padding:2px 8px;border-radius:999px;background:#f0ede8;border:1px solid rgba(0,0,0,0.08);color:#6a6560}
+.rm-price{font-family:"DM Mono",monospace;font-size:11px;color:#9a9590;line-height:1.6}
 
 /* SLIDE 8 — ALL-IN COST */
-.s8{background:#0d0d0d;align-items:flex-start}
+.s8{background:#f7f6f3;align-items:flex-start;color:#1a1814}
 .cost-tbl-big{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px}
-.cost-tbl-big th{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);padding:8px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.08)}
-.cost-tbl-big td{color:rgba(240,237,232,0.6);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05)}
-.cost-tbl-big .tr-tot td{color:#f0ede8;font-weight:600;border-top:1px solid rgba(255,255,255,0.15);border-bottom:none;background:rgba(255,255,255,0.03)}
-.cost-tbl-big .tr-gold td{color:#c9a84c;font-weight:700;border-top:none;background:rgba(201,168,76,0.05)}
+.cost-tbl-big th{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9a9590;padding:8px 12px;text-align:left;border-bottom:1px solid rgba(0,0,0,0.09)}
+.cost-tbl-big td{color:#5a5550;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.cost-tbl-big .tr-tot td{color:#1a1814;font-weight:600;border-top:1px solid rgba(0,0,0,0.1);border-bottom:none;background:#f0ede8}
+.cost-tbl-big .tr-gold td{color:#b8922a;font-weight:700;border-top:none;background:rgba(184,146,42,0.07)}
 
 @media(max-width:700px){
   .slide{padding:60px 24px 80px}
@@ -169,7 +169,7 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
     <div class="slide-inner">
       <div class="eyebrow">Sprint 1 &mdash; 30 days</div>
       <div class="slide-title" style="font-size:clamp(22px,3vw,36px);margin-bottom:12px">What fits in the 30-day box</div>
-      <p style="font-size:13px;color:rgba(240,237,232,0.5);margin-bottom:16px;max-width:560px">Think of a sprint as a fixed box. One budget, one timeline. Everything below goes in together as one connected system &mdash; not three separate projects.</p>
+      <p style="font-size:13px;color:#6a6560;margin-bottom:16px;max-width:560px">Think of a sprint as a fixed box. One budget, one timeline. Everything below goes in together as one connected system &mdash; not three separate projects.</p>
       <div class="sprint-box">
         <div class="box-label">Sprint 1 &mdash; inside the box</div>
         <div class="box-right">30 days &mdash; &pound;3,500</div>
@@ -325,7 +325,7 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
               <tr class="tr-tot"><td>Additional cost</td><td class="cv wd">~£20&ndash;45</td></tr>
             </tbody>
           </table>
-          <p style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:10px">Cancellations and failed payments also handled automatically &mdash; grace period, save attempt, then clean offboarding.</p>
+          <p style="font-size:11px;color:#9a9590;margin-top:10px">Cancellations and failed payments also handled automatically &mdash; grace period, save attempt, then clean offboarding.</p>
         </div>
       </div>
     </div>
@@ -367,7 +367,7 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
               <tr class="tr-tot"><td>Additional cost</td><td class="cv wd">~£5&ndash;15</td></tr>
             </tbody>
           </table>
-          <p style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:10px">The lowest-cost component in the sprint. The ROI potential is the highest of all three.</p>
+          <p style="font-size:11px;color:#9a9590;margin-top:10px">The lowest-cost component in the sprint. The ROI potential is the highest of all three.</p>
         </div>
       </div>
     </div>
@@ -378,7 +378,7 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
     <div class="slide-inner">
       <div class="eyebrow">After Sprint 1</div>
       <div class="slide-title" style="font-size:clamp(22px,3vw,36px);margin-bottom:8px">The roadmap &mdash;<br>what comes next</div>
-      <p style="font-size:13px;color:rgba(240,237,232,0.5);margin-bottom:0;max-width:560px">Each sprint is its own 30-day box. Nothing starts until the previous sprint is delivered and Deb is happy with it.</p>
+      <p style="font-size:13px;color:#6a6560;margin-bottom:0;max-width:560px">Each sprint is its own 30-day box. Nothing starts until the previous sprint is delivered and Deb is happy with it.</p>
       <div class="rm-grid">
         <div class="rm-card now">
           <div class="rm-phase">Month 1 &mdash; Now</div>
@@ -410,7 +410,7 @@ body{font-family:"DM Sans",sans-serif;color:#f0ede8}
     <div class="slide-inner">
       <div class="eyebrow">Full picture</div>
       <div class="slide-title" style="font-size:clamp(22px,3vw,36px);margin-bottom:6px">All three sprints live &mdash;<br>combined monthly costs</div>
-      <p style="font-size:13px;color:rgba(240,237,232,0.5);max-width:560px;margin-bottom:0">Everything Deb pays monthly once all three sprints are running. Paid direct to each provider. No markup from Altitude AI.</p>
+      <p style="font-size:13px;color:#6a6560;max-width:560px;margin-bottom:0">Everything Deb pays monthly once all three sprints are running. Paid direct to each provider. No markup from Altitude AI.</p>
       <table class="cost-tbl-big">
         <thead><tr><th>Service</th><th>Sprint</th><th>Low</th><th>High</th></tr></thead>
         <tbody>
